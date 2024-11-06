@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const customerData = [
@@ -14,18 +14,31 @@ const customerData = [
 export default function CustomerCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Move to the previous slide
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? customerData.length - 1 : prevIndex - 1
     );
   };
 
+  // Move to the next slide
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === customerData.length - 1 ? 0 : prevIndex + 1
     );
   };
 
+  // Move to the next slide automatically every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, 2000); // Adjust the interval as needed (3000ms = 3 seconds)
+
+    // Clear interval on component unmount
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
+  // Set the clicked image as the current slide
   const handleImageClick = (index: number) => {
     setCurrentIndex(index);
   };
@@ -44,7 +57,7 @@ export default function CustomerCarousel() {
         <div className="flex overflow-x-hidden space-x-4 scrollbar-hide">
           {customerData.map((customer, index) => (
             <div
-              key={customer.id}  // Menggunakan customer.id sebagai key unik
+              key={customer.id}
               className={`relative flex-shrink-0 w-60 h-80 bg-cover bg-center rounded-lg overflow-hidden transition-transform duration-300 ${
                 index === currentIndex ? "scale-100" : "scale-90 opacity-50"
               } hover:opacity-75 cursor-pointer`}
@@ -66,13 +79,12 @@ export default function CustomerCarousel() {
         </button>
       </div>
 
-     
       <div className="flex justify-center mt-4 space-x-2">
-        {customerData.map((customer) => (
+        {customerData.map((customer, index) => (
           <div
-            key={customer.id}  
+            key={customer.id}
             className={`h-1 w-8 rounded-full transition-colors ${
-              customerData.indexOf(customer) === currentIndex ? "bg-red-500" : "bg-gray-300"
+              index === currentIndex ? "bg-red-500" : "bg-gray-300"
             }`}
           ></div>
         ))}

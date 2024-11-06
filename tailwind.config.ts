@@ -13,8 +13,18 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      animation: {
+        'loop-scroll': 'loop-scroll 50s linear infinite', // Define the scroll animation
+      },
+      keyframes: {
+        'loop-scroll': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
     },
   },
-  plugins: [daisyui,],
+  plugins: [daisyui],
 };
+
 export default config;

@@ -3,7 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaMapMarkedAlt, FaUser, FaWrench } from "react-icons/fa";
 import { PiStudentFill } from "react-icons/pi";
-import ProdukHome from "@/components/producthome";
+import ProdukHome from "@/components/productoverview";
+import { Cover } from "@/components/ui/cover";
+import TeamHome from "@/components/teamoverview";
 
 export default function Home() {
   return (
@@ -17,8 +19,8 @@ export default function Home() {
           className="object-cover w-full h-full"
         />
 
-        <div className="absolute flex-col top-[45%] left-[35rem] transform -translate-x-1/2 -translate-y-1/2 flex justify-start items-start rounded-2xl shadow-lg backdrop-blur-sm w-[60rem] h-[10rem] text-white">
-          <h1 className="text-6xl font-extrabold bg-t p-2">Nautika Sentra Indonesia</h1> 
+        <div className="absolute flex-col top-[45%] left-[35rem] transform -translate-x-1/2 -translate-y-1/2 flex justify-start items-start rounded-2xl shadow-lg backdrop-blur-sm w-[60rem] h-[10rem] ">
+          <h1 className="text-6xl font-extrabold bg-t p-2"><Cover >Nautika Sentra Indonesia</Cover></h1> 
           <p className="text-2xl font-extrabold p-2">helps you stay ahead by combining innovative maritime navigation & radiocommunication tech and hands-on support.</p>
         </div>
 
@@ -51,18 +53,18 @@ export default function Home() {
 
 
       <div className="flex flex-col md:flex-row items-center justify-center h-[70vh] bg-gray-300 p-8 mt-2">
-      <div className="relative w-full md:w-1/2 h-[500px]">
+      <div className="relative w-full md:w-1/2 lg:w-1/3 max-w-[600px] h-[400px]">
         <Image
           src="/home/fsg.jpg" 
           alt="Background Image"
           layout="fill"
-          objectFit="cover"
+          style={{ objectFit: 'cover' }}
           className="rounded-lg shadow-lg"
         />
       </div>
 
    
-      <div className="relative z-10 w-full md:w-1/2 bg-white p-8 rounded-lg shadow-lg md:-ml-20 mt-8 md:mt-0">
+      <div className="relative z-10 w-full md:w-1/2  bg-white p-8 rounded-lg shadow-lg md:-ml-20 mt-8 md:mt-0">
         <h2 className="text-3xl font-bold text-gray-800 mb-4">NSI Marine</h2>
         <p className="text-gray-600 mb-6">
           A renowned supplier of integrated bridge solutions, representative of the most important brands in the industry and producer of unique complementary products. Our teams consist of the best professionals in the field of development, design, engineering and commerce. Technology in the maritime world moves fast. Luckily, so do we. We are here to help your company with innovative solutions that match better with the technology and capabilities of today. And we are ready to help you, every day.
@@ -82,13 +84,15 @@ export default function Home() {
 
     {/* Rincian Produk pada Home */}
 
-      <div className="hero h-[50vh] bg-gray-300 mt-5">
+      <div className="hero h-[60vh] bg-gray-300 mt-5">
        <ProdukHome />
       </div>
 
     {/* Rincian Team pada Home */}
 
-      <div className="hero h-[50vh] bg-gray-300 mt-5">Konten 04 </div>
+      <div className="hero h-[75vh] bg-gray-300 mt-5">
+        <TeamHome />
+      </div>
       
     {/* Rincian Costumer pada Home */}
 
