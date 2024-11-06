@@ -1,101 +1,100 @@
+import CustomerCarousel from "@/components/ourcostumer";
 import Image from "next/image";
+import Link from "next/link";
+import { FaMapMarkedAlt, FaUser, FaWrench } from "react-icons/fa";
+import { PiStudentFill } from "react-icons/pi";
+import ProdukHome from "@/components/producthome";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <div className="flex flex-col hero min-h-screen relative">
+      <div className="relative w-full h-[97vh]">
+        <video 
+          src="/home/inductionResize.mp4" 
+          autoPlay 
+          loop 
+          muted 
+          className="object-cover w-full h-full"
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <div className="absolute flex-col top-[45%] left-[35rem] transform -translate-x-1/2 -translate-y-1/2 flex justify-start items-start rounded-2xl shadow-lg backdrop-blur-sm w-[60rem] h-[10rem] text-white">
+          <h1 className="text-6xl font-extrabold bg-t p-2">Nautika Sentra Indonesia</h1> 
+          <p className="text-2xl font-extrabold p-2">helps you stay ahead by combining innovative maritime navigation & radiocommunication tech and hands-on support.</p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        <div className="absolute inset-0 flex justify-center items-end pb-10 gap-10">
+          <div className="flex flex-col items-center bg-white bg-opacity-80 shadow-lg rounded-lg p-4 w-60">
+            <h2 className="font-bold text-lg flex gap-2"><FaWrench className="mt-[3px]"/>Solution</h2>
+            <p className="text-gray-700">From integrated bridges to individual devices. We are happy to help you finding the best solution.</p>
+            <button className="mt-2 bg-teal-500 text-white py-1 px-4 rounded">Learn More</button>
+          </div>
+          
+          <div className="flex flex-col items-center bg-white bg-opacity-80 shadow-lg rounded-lg p-4 w-60">
+            <h2 className="font-bold text-lg flex gap-2"><FaUser className="mt-[3px]"/>Customers</h2>
+            <p className="text-gray-700">A deepsea, inland, yachting, or other type of vessel? We have a solution for every market.</p>
+            <button className="mt-2 bg-teal-500 text-white py-1 px-4 rounded">Learn More</button>
+          </div>
+          
+          <div className="flex flex-col items-center bg-white bg-opacity-80 shadow-lg rounded-lg p-4 w-60">
+            <h2 className="font-bold text-lg flex gap-2"><PiStudentFill className="mt-[3px]"/>Training</h2>
+            <p className="text-gray-700">Sail safely with a well-prepared crew. Our trainers facilitate a wide range of maritime equipment courses.</p>
+            <button className="mt-2 bg-teal-500 text-white py-1 px-4 rounded">Learn More</button>
+          </div>
+          
+          <div className="flex flex-col items-center bg-white bg-opacity-80 shadow-lg rounded-lg p-4 w-60">
+            <h2 className="font-bold text-lg flex gap-2"><FaMapMarkedAlt className="mt-[3px]"/>Location</h2>
+            <p className="text-gray-700">Looking for immediate assistance? Contact the nearest office for 24/7 support.</p>
+            <button className="mt-2 bg-teal-500 text-white py-1 px-4 rounded">Learn More</button>
+          </div>
+        </div>
+      </div>
+
+
+      <div className="flex flex-col md:flex-row items-center justify-center h-[70vh] bg-gray-300 p-8 mt-2">
+      <div className="relative w-full md:w-1/2 h-[500px]">
+        <Image
+          src="/home/fsg.jpg" 
+          alt="Background Image"
+          layout="fill"
+          objectFit="cover"
+          className="rounded-lg shadow-lg"
+        />
+      </div>
+
+   
+      <div className="relative z-10 w-full md:w-1/2 bg-white p-8 rounded-lg shadow-lg md:-ml-20 mt-8 md:mt-0">
+        <h2 className="text-3xl font-bold text-gray-800 mb-4">NSI Marine</h2>
+        <p className="text-gray-600 mb-6">
+          A renowned supplier of integrated bridge solutions, representative of the most important brands in the industry and producer of unique complementary products. Our teams consist of the best professionals in the field of development, design, engineering and commerce. Technology in the maritime world moves fast. Luckily, so do we. We are here to help your company with innovative solutions that match better with the technology and capabilities of today. And we are ready to help you, every day.
+        </p>
+        <Link href="/about" className="inline-block bg-red-500 text-white font-semibold py-2 px-6 rounded-lg shadow hover:bg-red-700 transition duration-400">
+          About NSI Marine
+        </Link>
+      </div>
+      
+  
+      <div className="fixed bottom-10 right-10">
+        <Link href="/service-request" className="inline-block bg-red-500 text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:bg-red-600 transition duration-300">
+          Service Request
+        </Link>
+      </div>
+      </div>
+
+    {/* Rincian Produk pada Home */}
+
+      <div className="hero h-[50vh] bg-gray-300 mt-5">
+       <ProdukHome />
+      </div>
+
+    {/* Rincian Team pada Home */}
+
+      <div className="hero h-[50vh] bg-gray-300 mt-5">Konten 04 </div>
+      
+    {/* Rincian Costumer pada Home */}
+
+      <div className="h-[60vh] bg-gray-300 mt-5 flex items-center justify-center w-full">
+        <CustomerCarousel />
+      </div>
     </div>
   );
 }
