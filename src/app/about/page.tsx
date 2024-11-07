@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+
 
 export default function About() {
   return (
@@ -74,7 +74,7 @@ export default function About() {
 
 
       {/* Manufacture Partner Section */}
-      <section className="w-full py-10 bg-teal-500 text-white text-center">
+      <section className="w-full py-10 bg-gray-400 text-white text-center">
       <h2 className="text-3xl font-bold mb-4">Manufacture Partner</h2>
       <p className="text-lg mb-6 max-w-xl mx-auto">
         We are proud to partner with leading manufacturers, bringing you the most reliable and innovative maritime solutions.
