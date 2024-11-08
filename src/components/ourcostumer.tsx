@@ -9,8 +9,8 @@ const customerData = [
   { id: 3, title: "Vallianz Pte.Ltd", img: "/customerIMG/vallianz1.jfif" },
   { id: 4, title: "PT. Pelni", img: "/customerIMG/pelni1.jpg" },
   { id: 5, title: "PT. Pertamina International Shipping", img: "/customerIMG/pis1.jfif" },
-  { id: 5, title: "PT. Pertamina International Shipping", img: "/customerIMG/pis1.jfif" },
-  { id: 5, title: "PT. Pertamina International Shipping", img: "/customerIMG/pis1.jfif" },
+  { id: 5, title: "PACC LINE Pte.Ltd", img: "/customerIMG/PacSuhail.jpg" },
+  { id: 5, title: "FSO Natuna Medco Energi", img: "/customerIMG/Medco.jpeg" },
 ];
 
 export default function CustomerCarousel() {

@@ -25,7 +25,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-col hero min-h-screen bg-slate-300">
+    <div className="flex flex-col hero min-h-screen bg-transparant">
       <div className="relative w-full h-[90vh] md:h-[97vh]">
         <video 
           src="/home/inductionResize.mp4" 

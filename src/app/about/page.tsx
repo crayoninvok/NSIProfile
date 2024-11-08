@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 
 
@@ -14,8 +15,8 @@ export default function About() {
 
       {/* Mission and Values Section */}
       <section className="flex flex-col md:flex-row items-center gap-10 bg-white shadow-lg rounded-lg p-8 my-10 w-full max-w-5xl">
-        <div className="w-full md:w-1/2">
-          <Image src="/about/about1.jpg" alt="Our Mission" width={500} height={400} className="rounded-lg shadow-lg" />
+        <div className="w-full md:w-1/2 ">
+          <Image src="/about/about3.jpg" alt="Our Mission" width={500} height={200} className="rounded-lg shadow-lg " />
         </div>
         <div className="w-full md:w-1/2 text-gray-800">
           <h2 className="text-3xl font-bold mb-4">Our Mission</h2>

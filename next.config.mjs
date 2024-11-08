@@ -1,7 +1,23 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-    domains: ["picsum.photos", "randomuser.me"], // Add both domains here
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'randomuser.me',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.ctfassets.net', // Contentful's image CDN
+        pathname: '/**',
+      },
+    ],
   },
 };
 
