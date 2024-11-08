@@ -25,7 +25,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-col hero min-h-screen bg-transparant">
+    <div className="flex flex-col hero min-h-screen bg-gradient-to-b from-gray-900 to-gray-700">
       <div className="relative w-full h-[90vh] md:h-[97vh]">
         <video 
           src="/home/inductionResize.mp4" 
@@ -90,7 +90,7 @@ export default function Home() {
         </Dialog>
       </div>
 
-      <div className="flex flex-col md:flex-row items-center justify-center bg-gray-300 p-6 mt-6 space-y-8 md:space-y-0 md:space-x-8">
+      <div className="flex flex-col md:flex-row items-center justify-center bg-transparant p-6 mt-6 space-y-8 md:space-y-0 md:space-x-8">
         <div className="relative w-full md:w-1/2 lg:w-1/3 h-64 sm:h-80">
           <Image
             src="/home/fsg.jpg" 
@@ -118,15 +118,15 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="hero h-auto bg-gray-300 py-10">
+      <div className="hero h-auto bg-transparent py-10">
         <ProdukHome />
       </div>
 
-      <div className="hero h-auto bg-gray-300 py-10">
+      <div className="hero h-auto bg-transparent py-10">
         <TeamHome />
       </div>
 
-      <div className="bg-gray-200 py-10 flex items-center justify-center hero w-full">
+      <div className="bg-transparent py-10 flex items-center justify-center hero w-full">
         <CustomerCarousel />
       </div>
     </div>

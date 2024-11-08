@@ -31,7 +31,7 @@ export default function ContactUsPage() {
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Name Input */}
+
           <div className="form-control w-full">
             <label className="label">
               <span className="label-text font-semibold text-gray-300">Your Name</span>
@@ -49,7 +49,7 @@ export default function ContactUsPage() {
             />
           </div>
 
-          {/* Email Input */}
+
           <div className="form-control w-full">
             <label className="label">
               <span className="label-text font-semibold text-gray-300">Email Address</span>
@@ -68,7 +68,7 @@ export default function ContactUsPage() {
             />
           </div>
 
-          {/* Message Textarea */}
+
           <div className="form-control w-full">
             <label className="label">
               <span className="label-text font-semibold text-gray-300">Your Message</span>
@@ -85,7 +85,7 @@ export default function ContactUsPage() {
             />
           </div>
 
-          {/* Submit Button */}
+
           <div className="flex justify-center">
             <Button
               type="submit"

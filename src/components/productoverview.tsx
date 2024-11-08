@@ -73,8 +73,8 @@ export default function ProdukHome() {
   }, [products]);
 
   return (
-    <div className="flex flex-col items-center bg-gray-100 py-16">
-      <h2 className="text-4xl font-bold text-gray-800 mb-10">Our Offerings</h2>
+    <div className="flex flex-col items-center bg-transparent py-16">
+      <h2 className="text-4xl font-bold text-gray-300 mb-10">Our Offerings</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 md:px-8 lg:px-16">
         
         {products.map((product, productIndex) => (

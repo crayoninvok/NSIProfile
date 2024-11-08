@@ -41,7 +41,7 @@ export default function CustomerCarousel() {
   };
 
   return (
-    <section className="py-10 bg-gray-200 text-center w-full">
+    <section className="py-10 bg-transparent text-center w-full">
       <h2 className="text-2xl sm:text-3xl font-bold mb-6">Our Customers</h2>
       
       <div className="relative flex items-center justify-center w-full">
