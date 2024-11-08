@@ -39,8 +39,8 @@ export default function TeamSection() {
 
   return (
     <div className="hero flex flex-col items-center bg-transparent py-12 md:py-16 gap-5">
-      <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 md:mb-10">Team Overview</h2>
-      <p className="text-base md:text-lg text-gray-600 text-center mb-8 md:mb-10 px-4 md:px-8 lg:px-16 max-w-3xl">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-300 mb-6 md:mb-10">Team Overview</h2>
+      <p className="text-base md:text-lg text-gray-200 text-center mb-8 md:mb-10 px-4 md:px-8 lg:px-16 max-w-3xl">
         Our team consists of skilled professionals who are passionate about delivering the best solutions for maritime navigation, communication, and support. Get to know the people behind our success.
       </p>
       

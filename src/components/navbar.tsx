@@ -31,7 +31,7 @@ export default function Navbar() {
 
   return (
     <div
-      className={`flex fixed justify-center h-[5rem] w-full items-center bg-transparent backdrop-blur-md z-10 px-10 transition-transform duration-300 ${
+      className={`flex fixed justify-center h-[5rem] w-full items-center bg-transparent backdrop-blur-md z-20 px-10 transition-transform duration-300 ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >

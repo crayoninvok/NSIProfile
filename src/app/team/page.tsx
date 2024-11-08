@@ -50,9 +50,9 @@ export default function TeamPage() {
         <div className="flex justify-center mb-8">
           <div
             key={director.fields.name}
-            className="bg-gray-800 hover:bg-gray-700 shadow-lg rounded-lg p-6 text-center w-80 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+            className="bg-gray-800 hover:bg-gray-700 shadow-lg rounded-lg p-6 text-center w-[25rem] transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
           >
-            <div className="overflow-hidden rounded-lg mx-auto mb-4 w-36 h-36 transform transition-transform duration-300 hover:scale-110">
+            <div className="overflow-hidden rounded-lg mx-auto mb-4 w-36 h-36 transform transition-transform duration-300 hover:scale-125">
               <img
                 src={`https:${director.fields.image.fields.file.url}`}
                 alt={director.fields.name}
@@ -74,13 +74,13 @@ export default function TeamPage() {
       )}
 
       {/* Other Team Members */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
         {otherMembers.map((member) => (
           <div
             key={member.fields.name}
-            className="bg-gray-800 hover:bg-gray-700 shadow-lg rounded-lg p-6 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+            className="bg-gray-800 hover:bg-gray-700 shadow-lg rounded-lg p-6 text-center transform transition-all duration-300 hover:scale-110 hover:shadow-2xl"
           >
-            <div className="overflow-hidden rounded-lg mx-auto mb-4 w-24 h-24 transform transition-transform duration-300 hover:scale-110">
+            <div className="overflow-hidden rounded-lg mx-auto mb-4 w-28 h-28 transform transition-transform duration-300 hover:scale-125">
               <img
                 src={`https:${member.fields.image.fields.file.url}`}
                 alt={member.fields.name}
@@ -114,7 +114,7 @@ export default function TeamPage() {
             <img
               src={`https:${selectedMember.fields.image.fields.file.url}`}
               alt={selectedMember.fields.name}
-              className="w-32 h-32 mx-auto rounded-lg mb-4"
+              className="w-48 h-48 mx-auto rounded-lg mb-4 transition-transform duration-300 hover:scale-150"
             />
             <h2 className="text-3xl font-bold text-white mb-2">
               {selectedMember.fields.name}
