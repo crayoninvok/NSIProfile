@@ -57,17 +57,17 @@ export default function ProdukHome() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      // Trigger fade-out effect
+    
       setFadeClass("opacity-0");
 
-      // After fade-out, update the image and then fade-in
+      
       setTimeout(() => {
         setCurrentImageIndexes((prevIndexes) =>
           prevIndexes.map((index, i) => (index + 1) % products[i].images.length)
         );
-        setFadeClass("opacity-100"); // Fade-in effect
-      }, 1000); // Duration of fade-out
-    }, 3000); // Interval for image change
+        setFadeClass("opacity-100"); 
+      }, 1000); 
+    }, 3000); 
 
     return () => clearInterval(interval);
   }, [products]);

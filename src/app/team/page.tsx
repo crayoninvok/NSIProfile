@@ -52,7 +52,7 @@ export default function TeamPage() {
             key={director.fields.name}
             className="bg-gray-800 hover:bg-gray-700 shadow-lg rounded-lg p-6 text-center w-[25rem] transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
           >
-            <div className="overflow-hidden rounded-lg mx-auto mb-4 w-36 h-36 transform transition-transform duration-300 hover:scale-125">
+            <div className="overflow-hidden rounded-lg mx-auto mb-4 w-36 h-36">
               <img
                 src={`https:${director.fields.image.fields.file.url}`}
                 alt={director.fields.name}
@@ -72,7 +72,9 @@ export default function TeamPage() {
           </div>
         </div>
       )}
-
+      <div>
+        <h1>Core Team</h1>
+      </div>
       {/* Other Team Members */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
         {otherMembers.map((member) => (

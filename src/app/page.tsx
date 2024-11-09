@@ -35,10 +35,10 @@ export default function Home() {
           className="object-cover w-full h-full"
         />
         
-        {/* Overlay for readability */}
+   
         <div className="absolute inset-0 bg-black opacity-30"></div>
 
-        {/* Centered Title Section */}
+    
         <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/4 flex flex-col justify-center items-center bg-opacity-80 
         backdrop-blur-sm rounded-lg p-4 sm:p-6 md:p-8 lg:p-10 w-[90%] sm:w-[80%] md:w-[60rem] lg:w-[90rem] max-w-[100%] z-10 lg:mt-[7rem]">
           <h1 className="text-3xl sm:text-3xl md:text-5xl lg:text-8xl font-extrabold text-center text-white mb-5">
@@ -49,7 +49,6 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Card Section for Desktop */}
         <div className="hidden md:flex absolute bottom-10 left-1/2 transform -translate-x-1/2 pb-8 px-4 md:px-8 lg:px-16 z-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-6xl">
             {cards.map(({ title, icon: Icon, text }, idx) => (
@@ -62,7 +61,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Single Card on Mobile with Modal Trigger */}
+
         <div className="md:hidden absolute bottom-10 left-1/2 transform -translate-x-1/2 pb-8 px-4 md:px-8 lg:px-16 z-10">
           <div className="flex flex-col items-center bg-white bg-opacity-80 shadow-lg rounded-lg p-4 w-64 cursor-pointer" onClick={openModal}>
             <h2 className="font-bold text-lg text-teal-500 text-center">View Our Services</h2>
@@ -71,7 +70,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Modal for Showing All Cards */}
         <Dialog open={isModalOpen} onClose={closeModal} className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <Dialog.Panel className="bg-white rounded-lg max-w-md w-full p-6">
             <Dialog.Title className="text-xl font-bold mb-4 text-center">Our Services</Dialog.Title>

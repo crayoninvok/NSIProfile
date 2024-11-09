@@ -9,14 +9,12 @@ export default function ProductPage() {
       <h1 className="text-4xl font-bold text-gray-300 underline mb-8">Our Product</h1>
 
       <div className="w-full max-w-[70rem] space-y-8">
-        
-        {/* Installment Product Card */}
+   
         <div className="card bg-blue-200 shadow-lg rounded-lg p-6 md:p-8 text-left w-full">
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">For Installment Product</h2>
           <p className="text-gray-600 mb-4">Explore our comprehensive range of Communication and Navigation products.</p>
           <div className="flex flex-col md:flex-row gap-8">
-            
-            {/* Communication Products Card */}
+     
             <div className="card bg-base-100 shadow-md flex-1 transform transition-transform duration-500 hover:scale-105">
               <figure className="w-full h-[20rem] overflow-hidden">
                 <Image 
@@ -38,7 +36,6 @@ export default function ProductPage() {
               </div>
             </div>
 
-            {/* Navigation Products Card */}
             <div className="card bg-base-100 shadow-md flex-1 transform transition-transform duration-500 hover:scale-105">
               <figure className="w-full h-[20rem] overflow-hidden">
                 <Image 
@@ -62,13 +59,12 @@ export default function ProductPage() {
           </div>
         </div>
 
-        {/* Services Product Card */}
         <div className="card bg-blue-200 shadow-lg rounded-lg p-6 md:p-8 text-left">
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">For Services</h2>
           <p className="text-gray-600 mb-4">Explore our Radio Survey and VDR APT for comprehensive services.</p>
           <div className="flex flex-col md:flex-row gap-8">
             
-            {/* Survey Products Card */}
+  
             <div className="card bg-base-100 shadow-md flex-1 transform transition-transform duration-500 hover:scale-105">
               <figure className="w-full h-[20rem] overflow-hidden">
                 <Image 
@@ -90,7 +86,6 @@ export default function ProductPage() {
               </div>
             </div>
 
-            {/* VDR Products Card */}
             <div className="card bg-base-100 shadow-md flex-1 transform transition-transform duration-500 hover:scale-105">
               <figure className="w-full h-[20rem] overflow-hidden">
                 <Image 
