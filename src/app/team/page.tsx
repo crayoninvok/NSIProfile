@@ -3,11 +3,19 @@
 import { useState, useEffect } from 'react';
 import { getTeamMembers } from '@/lib/team';
 import { ITeam } from '@/types/team';
+import { FaFacebook, FaLinkedin, FaMailBulk } from 'react-icons/fa';
+
+
+interface IRandomUser {
+  name: { first: string; last: string };
+  picture: { large: string };
+}
 
 export default function TeamPage() {
   const [teamMembers, setTeamMembers] = useState<ITeam[]>([]);
   const [selectedMember, setSelectedMember] = useState<ITeam | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [randomUsers, setRandomUsers] = useState<IRandomUser[]>([]);
 
   useEffect(() => {
     const fetchMembers = async () => {
@@ -19,10 +27,20 @@ export default function TeamPage() {
       }
     };
 
+    const fetchRandomUsers = async () => {
+      try {
+        const response = await fetch('https://randomuser.me/api/?results=8');
+        const data = await response.json();
+        setRandomUsers(data.results);
+      } catch (error) {
+        console.error('Failed to fetch random users:', error);
+      }
+    };
+
     fetchMembers();
+    fetchRandomUsers();
   }, []);
 
-  // Separate the director from the rest of the team members
   const director = teamMembers.find((member) => member.fields.role === 'Director');
   const otherMembers = teamMembers.filter((member) => member.fields.role !== 'Director');
 
@@ -47,7 +65,7 @@ export default function TeamPage() {
 
       {/* Director Section */}
       {director && (
-        <div className="flex justify-center mb-8">
+        <div className="flex justify-center">
           <div
             key={director.fields.name}
             className="bg-gray-800 hover:bg-gray-700 shadow-lg rounded-lg p-6 text-center w-[25rem] transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
@@ -72,10 +90,15 @@ export default function TeamPage() {
           </div>
         </div>
       )}
-      <div>
-        <h1>Core Team</h1>
+
+      {/* Core Team Section */}
+      <div className="flex justify-center p-[3rem]">
+        <div className="w-[80rem]">
+          <div className="flex text-center justify-center bg-cyan-500 rounded-lg h-[3rem]">
+            <h1 className="mt-2 font-semibold text-[20px]">Core Team</h1>
+          </div>
+        </div>
       </div>
-      {/* Other Team Members */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
         {otherMembers.map((member) => (
           <div
@@ -103,6 +126,35 @@ export default function TeamPage() {
         ))}
       </div>
 
+      {/* Other Team Section */}
+      <div className="flex justify-center p-[3rem]">
+        <div className="w-[80rem]">
+          <div className="flex text-center justify-center bg-cyan-500 rounded-lg h-[3rem]">
+            <h1 className="mt-2 font-semibold text-[20px]">Other Team</h1>
+          </div>
+        </div>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        {randomUsers.map((user, index) => (
+          <div
+            key={index}
+            className="bg-gray-800 hover:bg-gray-700 shadow-lg rounded-lg p-6 text-center transform transition-all duration-300 hover:scale-110 hover:shadow-2xl"
+          >
+            <div className="overflow-hidden rounded-lg mx-auto mb-4 w-28 h-28 transform transition-transform duration-300 hover:scale-125">
+              <img
+                src={user.picture.large}
+                alt={`${user.name.first} ${user.name.last}`}
+                className="object-cover w-full h-full"
+              />
+            </div>
+            <h2 className="text-2xl font-semibold text-white mb-2">
+              {user.name.first} {user.name.last}
+            </h2>
+            <p className="text-gray-400 mb-4">Staff</p>
+          </div>
+        ))}
+      </div>
+
       {/* Modal */}
       {isModalOpen && selectedMember && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
@@ -122,9 +174,14 @@ export default function TeamPage() {
               {selectedMember.fields.name}
             </h2>
             <p className="text-lg text-gray-400 mb-4">{selectedMember.fields.role}</p>
-            <p className="text-gray-300 mb-4">
-              Additional details about the team member can go here. You could display a short bio or contact information if available.
+            <p className="text-gray-300 mb-3">
+              {selectedMember.fields.description}
             </p>
+            <div className='justify-center flex text-center mb-4 gap-7 text-[30px]'>
+              <FaLinkedin />
+              <FaFacebook />
+              <FaMailBulk />
+            </div>
             <button
               onClick={closeModal}
               className="btn btn-primary w-full hover:bg-blue-600"
