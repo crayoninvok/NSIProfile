@@ -1,4 +1,4 @@
-import { IProductCom } from '@/types/product';
+
 import { getProductCom } from '@/lib/product';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Document, BLOCKS, INLINES } from '@contentful/rich-text-types';
@@ -26,11 +26,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
     return <div>Product not found</div>;
   }
 
-  // Format price as currency
-  const formattedPrice = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-  }).format(parseFloat(product.fields.price.replace(/[^0-9.-]+/g, '')));
+
 
   // Custom render options for compact rich text
   const renderOptions = {
@@ -52,15 +48,15 @@ export default async function ProductPage({ params }: ProductPageProps) {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center py-10 bg-gray-100">
+    <div className="min-h-screen flex flex-col items-start justify-center py-10 bg-gray-200">
          <Link href="/product/communicationpro" passHref>
-          <button className="text-gray-800 hover:text-gray-600 mb-4 inline-flex items-center">
+          <button className=" btn text-gray-800 hover:text-gray-600 mb-4 inline-flex items-center mt-[5rem] lg:ml-[16rem] font-semibold">
             ← Back
           </button>
         </Link>
       <div className="flex flex-col lg:flex-row bg-white rounded-lg shadow-lg p-8 lg:p-12 max-w-[80%] mx-auto">
         {/* Image Section */}
-        <div className="w-full lg:w-[50%] mb-8 lg:mb-0">
+        <div className="w-full lg:w-[40%] mb-8 lg:mb-0 h-full">
           <img
             src={product.fields.Productcomimage.fields.file.url}
             alt={product.fields.Productcomname}
@@ -73,12 +69,12 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <h1 className="text-3xl font-semibold text-gray-800 mb-4">
             {product.fields.Productcomname}
           </h1>
-          <p className="text-lg font-medium text-gray-600 mb-4">{formattedPrice}</p>
           <div className="text-gray-700 text-base leading-snug mb-4">
             {typeof product.fields.description === 'object' && 'nodeType' in product.fields.description
               ? documentToReactComponents(product.fields.description as Document, renderOptions)
               : product.fields.description}
           </div>
+              <p className="text-lg font-medium text-gray-600 mb-4">{product.fields.price}</p>
           <button className="w-full lg:w-auto px-6 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded shadow transition duration-300">
             Buy Now
           </button>
