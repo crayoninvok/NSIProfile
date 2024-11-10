@@ -1,4 +1,5 @@
 
+
 import Image from "next/image";
 
 
@@ -32,96 +33,95 @@ export default function About() {
           </ul>
         </div>
       </section>
-
-
+      
       <section className="text-center py-10 w-full max-w-5xl">
-  <h2 className="text-4xl font-bold text-gray-100 mb-6">Our Approved Classification</h2>
-  <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-10">
-    We work closely with industry leaders and meet the highest standards of classification. Our certifications and approvals reflect our commitment to excellence in maritime solutions.
-  </p>
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-    <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center text-center">
-      <Image src="/classIAX/BV.svg" alt="Classification" width={120} height={120} className="mx-auto mb-4" />
-      <h3 className="text-xl font-semibold">Bureau Veritas <i>(BV)</i></h3>
-      <p className="text-gray-500 text-center">Top standards in maritime safety and efficiency.</p>
-    </div>
-    <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center text-center">
-      <Image src="/classIAX/NK.svg" alt="Classification" width={120} height={120} className="mx-auto mb-4" />
-      <h3 className="text-xl font-semibold">Nippon Kaiji Kyokai <i>(NK)</i></h3>
-      <p className="text-gray-500 text-center">Certified excellence in maritime operations.</p>
-    </div>
-    <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center text-center">
-      <Image src="/classIAX/DNV.svg" alt="Classification" width={150} height={120} className="mx-auto mb-4" />
-      <h3 className="text-xl font-semibold">Det Norske Veritas <i>(DNV)</i></h3>
-      <p className="text-gray-500 text-center">Advanced standards in maritime service.</p>
-    </div>
-    <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center text-center">
-      <Image src="/classIAX/LR.png" alt="Classification" width={120} height={120} className="mx-auto mb-4" />
-      <h3 className="text-xl font-semibold">Lloyd's Register <i>(LR)</i></h3>
-      <p className="text-gray-500 text-center">Advanced standards in maritime service.</p>
-    </div>
-    <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center text-center">
-      <Image src="/classIAX/BKI.svg" alt="Classification" width={120} height={120} className="mx-auto mb-4" />
-      <h3 className="text-xl font-semibold">Biro Klassifikasi Indonesia <i>(BKI)</i></h3>
-      <p className="text-gray-500 text-center">Advanced standards in maritime service.</p>
-    </div>
-    <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center text-center">
-      <Image src="/classIAX/ABS.png" alt="Classification" width={160} height={120} className="mx-auto mb-4" />
-      <h3 className="text-xl font-semibold">American Bureau of Shipping <i>(ABS)</i></h3>
-      <p className="text-gray-500 text-center">Advanced standards in maritime service.</p>
-    </div>
-  </div>
-</section>
-
-
-
-      <section className="w-full py-10 bg-gray-400 text-white text-center">
-      <h2 className="text-3xl font-bold mb-4">Manufacture Partner</h2>
-      <p className="text-lg mb-6 max-w-xl mx-auto">
-        We are proud to partner with leading manufacturers, bringing you the most reliable and innovative maritime solutions.
-      </p>
-
-      <div className="overflow-hidden w-full mt-8">
-        <div className="flex space-x-8 animate-loop-scroll">
-
-          <Image src="/manufacturloop/furuno.png" alt="Furuno" width={100} height={50} />
-          <Image src="/manufacturloop/garmin.png" alt="Garmin" width={100} height={50} />
-          <Image src="/manufacturloop/jotron.svg" alt="Jotron" width={100} height={50} />
-          <Image src="/manufacturloop/jrc.svg" alt="JRC" width={100} height={50} />
-          <Image src="/manufacturloop/mcmurdo.svg" alt="McMurdo" width={100} height={50} />
-          <Image src="/manufacturloop/samyung.svg" alt="Samyung" width={100} height={50} />
-
-          <Image src="/manufacturloop/furuno.png" alt="Furuno" width={100} height={50} />
-          <Image src="/manufacturloop/garmin.png" alt="Garmin" width={100} height={50} />
-          <Image src="/manufacturloop/jotron.svg" alt="Jotron" width={100} height={50} />
-          <Image src="/manufacturloop/jrc.svg" alt="JRC" width={100} height={50} />
-          <Image src="/manufacturloop/mcmurdo.svg" alt="McMurdo" width={100} height={50} />
-          <Image src="/manufacturloop/samyung.svg" alt="Samyung" width={100} height={50} />
-
-          <Image src="/manufacturloop/furuno.png" alt="Furuno" width={100} height={50} />
-          <Image src="/manufacturloop/garmin.png" alt="Garmin" width={100} height={50} />
-          <Image src="/manufacturloop/jotron.svg" alt="Jotron" width={100} height={50} />
-          <Image src="/manufacturloop/jrc.svg" alt="JRC" width={100} height={50} />
-          <Image src="/manufacturloop/mcmurdo.svg" alt="McMurdo" width={100} height={50} />
-          <Image src="/manufacturloop/samyung.svg" alt="Samyung" width={100} height={50} />
-          
-          <Image src="/manufacturloop/furuno.png" alt="Furuno" width={100} height={50} />
-          <Image src="/manufacturloop/garmin.png" alt="Garmin" width={100} height={50} />
-          <Image src="/manufacturloop/jotron.svg" alt="Jotron" width={100} height={50} />
-          <Image src="/manufacturloop/jrc.svg" alt="JRC" width={100} height={50} />
-          <Image src="/manufacturloop/mcmurdo.svg" alt="McMurdo" width={100} height={50} />
-          <Image src="/manufacturloop/samyung.svg" alt="Samyung" width={100} height={50} />
-
-          <Image src="/manufacturloop/furuno.png" alt="Furuno" width={100} height={50} />
-          <Image src="/manufacturloop/garmin.png" alt="Garmin" width={100} height={50} />
-          <Image src="/manufacturloop/jotron.svg" alt="Jotron" width={100} height={50} />
-          <Image src="/manufacturloop/jrc.svg" alt="JRC" width={100} height={50} />
-          <Image src="/manufacturloop/mcmurdo.svg" alt="McMurdo" width={100} height={50} />
-          <Image src="/manufacturloop/samyung.svg" alt="Samyung" width={100} height={50} />
-
+        <h2 className="text-4xl font-bold text-gray-100 mb-6">Our Approved Classification</h2>
+        <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-10">
+          We work closely with industry leaders and meet the highest standards of classification. Our certifications and approvals reflect our commitment to excellence in maritime solutions.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center text-center">
+            <Image src="/classIAX/BV.svg" alt="Classification" width={120} height={120} className="mx-auto mb-4" />
+            <h3 className="text-xl font-semibold">Bureau Veritas <i>(BV)</i></h3>
+            <p className="text-gray-500 text-center">Top standards in maritime safety and efficiency.</p>
+          </div>
+          <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center text-center">
+            <Image src="/classIAX/NK.svg" alt="Classification" width={120} height={120} className="mx-auto mb-4" />
+            <h3 className="text-xl font-semibold">Nippon Kaiji Kyokai <i>(NK)</i></h3>
+            <p className="text-gray-500 text-center">Certified excellence in maritime operations.</p>
+          </div>
+          <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center text-center">
+            <Image src="/classIAX/DNV.svg" alt="Classification" width={150} height={120} className="mx-auto mb-4" />
+            <h3 className="text-xl font-semibold">Det Norske Veritas <i>(DNV)</i></h3>
+            <p className="text-gray-500 text-center">Advanced standards in maritime service.</p>
+          </div>
+          <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center text-center">
+            <Image src="/classIAX/LR.png" alt="Classification" width={120} height={120} className="mx-auto mb-4" />
+            <h3 className="text-xl font-semibold">Lloyd's Register <i>(LR)</i></h3>
+            <p className="text-gray-500 text-center">Advanced standards in maritime service.</p>
+          </div>
+          <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center text-center">
+            <Image src="/classIAX/BKI.svg" alt="Classification" width={120} height={120} className="mx-auto mb-4" />
+            <h3 className="text-xl font-semibold">Biro Klassifikasi Indonesia <i>(BKI)</i></h3>
+            <p className="text-gray-500 text-center">Advanced standards in maritime service.</p>
+          </div>
+          <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center text-center">
+            <Image src="/classIAX/ABS.png" alt="Classification" width={160} height={120} className="mx-auto mb-4" />
+            <h3 className="text-xl font-semibold">American Bureau of Shipping <i>(ABS)</i></h3>
+            <p className="text-gray-500 text-center">Advanced standards in maritime service.</p>
+          </div>
         </div>
-      </div>
-    </section>
+        </section>
+
+
+
+          <section className="w-full py-10 bg-gray-400 text-white text-center">
+            <h2 className="text-3xl font-bold mb-4">Manufacture Partner</h2>
+            <p className="text-lg mb-6 max-w-xl mx-auto">
+              We are proud to partner with leading manufacturers, bringing you the most reliable and innovative maritime solutions.
+            </p>
+
+            <div className="overflow-hidden w-full mt-8">
+              <div className="flex space-x-8 animate-loop-scroll">
+
+            <Image src="/manufacturloop/furuno.png" alt="Furuno" width={100} height={50} />
+            <Image src="/manufacturloop/garmin.png" alt="Garmin" width={100} height={50} />
+            <Image src="/manufacturloop/jotron.svg" alt="Jotron" width={100} height={50} />
+            <Image src="/manufacturloop/jrc.svg" alt="JRC" width={100} height={50} />
+            <Image src="/manufacturloop/mcmurdo.svg" alt="McMurdo" width={100} height={50} />
+            <Image src="/manufacturloop/samyung.svg" alt="Samyung" width={100} height={50} />
+
+            <Image src="/manufacturloop/furuno.png" alt="Furuno" width={100} height={50} />
+            <Image src="/manufacturloop/garmin.png" alt="Garmin" width={100} height={50} />
+            <Image src="/manufacturloop/jotron.svg" alt="Jotron" width={100} height={50} />
+            <Image src="/manufacturloop/jrc.svg" alt="JRC" width={100} height={50} />
+            <Image src="/manufacturloop/mcmurdo.svg" alt="McMurdo" width={100} height={50} />
+            <Image src="/manufacturloop/samyung.svg" alt="Samyung" width={100} height={50} />
+
+            <Image src="/manufacturloop/furuno.png" alt="Furuno" width={100} height={50} />
+            <Image src="/manufacturloop/garmin.png" alt="Garmin" width={100} height={50} />
+            <Image src="/manufacturloop/jotron.svg" alt="Jotron" width={100} height={50} />
+            <Image src="/manufacturloop/jrc.svg" alt="JRC" width={100} height={50} />
+            <Image src="/manufacturloop/mcmurdo.svg" alt="McMurdo" width={100} height={50} />
+            <Image src="/manufacturloop/samyung.svg" alt="Samyung" width={100} height={50} />
+            
+            <Image src="/manufacturloop/furuno.png" alt="Furuno" width={100} height={50} />
+            <Image src="/manufacturloop/garmin.png" alt="Garmin" width={100} height={50} />
+            <Image src="/manufacturloop/jotron.svg" alt="Jotron" width={100} height={50} />
+            <Image src="/manufacturloop/jrc.svg" alt="JRC" width={100} height={50} />
+            <Image src="/manufacturloop/mcmurdo.svg" alt="McMurdo" width={100} height={50} />
+            <Image src="/manufacturloop/samyung.svg" alt="Samyung" width={100} height={50} />
+
+            <Image src="/manufacturloop/furuno.png" alt="Furuno" width={100} height={50} />
+            <Image src="/manufacturloop/garmin.png" alt="Garmin" width={100} height={50} />
+            <Image src="/manufacturloop/jotron.svg" alt="Jotron" width={100} height={50} />
+            <Image src="/manufacturloop/jrc.svg" alt="JRC" width={100} height={50} />
+            <Image src="/manufacturloop/mcmurdo.svg" alt="McMurdo" width={100} height={50} />
+            <Image src="/manufacturloop/samyung.svg" alt="Samyung" width={100} height={50} />
+
+          </div>
+         </div>
+          </section>
     </div>
   );
 }

@@ -6,6 +6,7 @@ import { ITeam } from '@/types/team';
 import { FaFacebook, FaLinkedin, FaMailBulk } from 'react-icons/fa';
 
 
+
 interface IRandomUser {
   name: { first: string; last: string };
   picture: { large: string };
@@ -91,56 +92,64 @@ export default function TeamPage() {
         </div>
       )}
 
-      {/* Core Team Section */}
+      
       <div className="flex justify-center p-[3rem]">
         <div className="w-[80rem]">
-          <div className="flex text-center justify-center bg-cyan-500 rounded-lg h-[3rem]">
+          <div className="flex text-center justify-center  bg-gradient-to-r from-blue-900 to-gray-700 rounded-lg h-[3rem]">
             <h1 className="mt-2 font-semibold text-[20px]">Core Team</h1>
           </div>
         </div>
       </div>
+      
+
+      {/* Core Team Section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-        {otherMembers.map((member) => (
-          <div
-            key={member.fields.name}
-            className="bg-gray-800 hover:bg-gray-700 shadow-lg rounded-lg p-6 text-center transform transition-all duration-300 hover:scale-110 hover:shadow-2xl"
-          >
-            <div className="overflow-hidden rounded-lg mx-auto mb-4 w-28 h-28 transform transition-transform duration-300 hover:scale-125">
-              <img
-                src={`https:${member.fields.image.fields.file.url}`}
-                alt={member.fields.name}
-                className="object-cover w-full h-full"
-              />
-            </div>
-            <h2 className="text-2xl font-semibold text-white mb-2">
-              {member.fields.name}
-            </h2>
-            <p className="text-gray-400 mb-4">{member.fields.role}</p>
-            <button
-              className="btn btn-primary btn-sm w-full hover:bg-blue-600"
-              onClick={() => openModal(member)}
-            >
-              Connect
-            </button>
-          </div>
-        ))}
+  {otherMembers.map((member) => (
+    <div
+      key={member.fields.name}
+      className="relative bg-gray-800 shadow-lg rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+    >
+      <img
+        src={`https:${member.fields.image.fields.file.url}`}
+        alt={member.fields.name}
+        className="object-cover w-full h-full"
+      />
+      
+      {/* Name and Role in Top Left */}
+      <div className="absolute top-2 left-auto w-[75%] bg-slate-500 rounded-lg text-center">
+        <h2 className="text-lg font-semibold text-white">{member.fields.name}</h2>
+        <p className="text-sm text-gray-300">{member.fields.role}</p>
       </div>
+
+      {/* Overlay with Connect Button, only visible on hover */}
+      <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <button
+          className="btn glass btn-primary btn-sm hover:bg-blue-600"
+          onClick={() => openModal(member)}
+        >
+          Connect
+        </button>
+      </div>
+    </div>
+  ))}
+</div>
 
       {/* Other Team Section */}
       <div className="flex justify-center p-[3rem]">
         <div className="w-[80rem]">
-          <div className="flex text-center justify-center bg-cyan-500 rounded-lg h-[3rem]">
+          <div className="flex text-center justify-center bg-gradient-to-r from-gray-700 to-blue-900 rounded-lg h-[3rem]">
             <h1 className="mt-2 font-semibold text-[20px]">Other Team</h1>
           </div>
         </div>
       </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
         {randomUsers.map((user, index) => (
           <div
             key={index}
-            className="bg-gray-800 hover:bg-gray-700 shadow-lg rounded-lg p-6 text-center transform transition-all duration-300 hover:scale-110 hover:shadow-2xl"
+            className="bg-gray-800 hover:bg-gray-700 shadow-lg rounded-lg p-6 text-center transform transition-all duration-300 hover:scale-110 hover:shadow-3xl"
           >
-            <div className="overflow-hidden rounded-lg mx-auto mb-4 w-28 h-28 transform transition-transform duration-300 hover:scale-125">
+            <div className="overflow-hidden rounded-lg mx-auto mb-4 w-28 h-28 transform transition-transform duration-300">
               <img
                 src={user.picture.large}
                 alt={`${user.name.first} ${user.name.last}`}

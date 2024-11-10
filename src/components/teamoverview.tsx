@@ -63,7 +63,7 @@ export default function TeamSection() {
         ))}
       </div>
       <div className="mt-8">
-        <Link href="/team" className="btn bg-blue-600 text-white py-2 px-4 rounded-md transition duration-300 ease-in-out hover:bg-blue-700">
+        <Link href="/team" className="btn glass bg-blue-600 text-white py-2 px-4 rounded-md transition duration-300 ease-in-out hover:bg-blue-700">
           Meet Our Team Here
         </Link>
       </div>

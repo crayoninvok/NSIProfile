@@ -14,7 +14,7 @@ export default function ProdukHome() {
         "/overviewnavequip/FAR2880.jpg", 
         "/overviewnavequip/jmamini.jpg"
       ],
-      link: "/products/navigation"
+      link: "/product/navigationpro"
     },
     {
       title: "Radiocommunication GMDSS Equipment",
@@ -25,7 +25,7 @@ export default function ProdukHome() {
         "/overviewcomequip/FM8900S.png",
         "/overviewcomequip/jue87.jpg"
       ],
-      link: "/products/communication"
+      link: "/product/communicationpro"
     },
     {
       title: "Radio Inspection and APT VDR",
@@ -45,7 +45,7 @@ export default function ProdukHome() {
         "/overviewtraining/tr2.jpg", 
         "/overviewtraining/tr3.jpg"
       ],
-      link: "/services/training"
+      link: "/contact"
     }
   ];
 

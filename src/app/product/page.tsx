@@ -29,7 +29,7 @@ export default function ProductPage() {
                 <h3 className="card-title text-xl font-semibold text-gray-700">Communication Products</h3>
                 <p className="text-gray-500">High-quality solutions designed for seamless maritime communication.</p>
                 <div className="card-actions justify-center">
-                  <Link href="/product/com" className="btn btn-primary">
+                  <Link href="/product/communicationpro" className="btn btn-primary">
                     See Cataloge
                   </Link>
                 </div>
@@ -50,7 +50,7 @@ export default function ProductPage() {
                 <h3 className="card-title text-xl font-semibold text-gray-700">Navigation Products</h3>
                 <p className="text-gray-500">Advanced navigation tools ensuring safe and efficient maritime journeys.</p>
                 <div className="card-actions justify-center">
-                  <Link href="/product/nav" className="btn btn-primary">
+                  <Link href="/product/navigationpro" className="btn btn-primary">
                     See Cataloge
                   </Link>
                 </div>

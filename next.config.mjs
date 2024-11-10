@@ -17,6 +17,11 @@ const nextConfig = {
         hostname: 'images.ctfassets.net', // Contentful's image CDN
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'assets.aceternity.com', // Aceternity's image CDN
+        pathname: '/**',
+      },
     ],
   },
 };
