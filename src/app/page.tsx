@@ -1,6 +1,6 @@
 "use client";
 
-import CustomerCarousel from "@/components/ourcostumer";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Dialog } from "@headlessui/react";
@@ -9,8 +9,9 @@ import { FaMapMarkedAlt, FaUser, FaWrench } from "react-icons/fa";
 import { PiStudentFill } from "react-icons/pi";
 import ProdukHome from "@/components/productoverview";
 import { Cover } from "@/components/ui/cover";
-import TeamHome from "@/components/teamoverview";
 import { HiArrowCircleDown } from "react-icons/hi";
+import OurCustomers from "@/components/ourcostumer";
+
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -29,7 +30,7 @@ export default function Home() {
     <div className="flex flex-col hero min-h-screen bg-gradient-to-b from-gray-900 to-gray-700">
       <div className="relative w-full h-[90vh] md:h-[97vh]">
         <video 
-          src="/home/inductionResize.mp4" 
+          src="/home/intro01.mp4" 
           autoPlay 
           loop 
           muted 
@@ -121,12 +122,8 @@ export default function Home() {
         <ProdukHome />
       </div>
 
-      <div className="hero h-auto bg-transparent py-10">
-        <TeamHome />
-      </div>
-
       <div className="bg-transparent py-10 flex items-center justify-center hero w-full">
-        <CustomerCarousel />
+        <OurCustomers />
       </div>
     </div>
   );

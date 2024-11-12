@@ -27,6 +27,11 @@ const nextConfig = {
         hostname: 'images.unsplash.com', // Unsplash's image CDN
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'via.placeholder.com', // Placeholder's image CDN
+        pathname: '/**',
+      },
     ],
   },
 };
