@@ -36,17 +36,17 @@ const customers: Customer[] = [
   },
   {
     name: "Pertamina International Shipping",
-    image: "/customerIMG/pis1.jfif",
+    image: "/customerIMG/pis1.jpg",
     description: "Pioneers in AI and machine learning.",
   },
   {
     name: "Teras Offshore Pte.Ltd",
-    image: "/customerIMG/teras1.jfif",
+    image: "/customerIMG/teras1.jpg",
     description: "Pioneers in AI and machine learning.",
   },
   {
     name: "Vallianz Offshore Pte.Ltd",
-    image: "/customerIMG/vallianz1.jfif",
+    image: "/customerIMG/vallianz1.jpg",
     description: "Pioneers in AI and machine learning.",
   },
 ];
