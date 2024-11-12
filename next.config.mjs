@@ -22,6 +22,11 @@ const nextConfig = {
         hostname: 'assets.aceternity.com', // Aceternity's image CDN
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com', // Unsplash's image CDN
+        pathname: '/**',
+      },
     ],
   },
 };

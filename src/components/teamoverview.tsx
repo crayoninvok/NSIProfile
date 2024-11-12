@@ -12,6 +12,16 @@ interface TeamMember {
   image: string;
 }
 
+interface ApiUser {
+  name: {
+    first: string;
+    last: string;
+  };
+  picture: {
+    large: string;
+  };
+}
+
 export default function TeamSection() {
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
 
@@ -21,7 +31,7 @@ export default function TeamSection() {
         const response = await fetch("https://randomuser.me/api/?results=4");
         const data = await response.json();
 
-        const fetchedMembers = data.results.map((user: any) => ({
+        const fetchedMembers = data.results.map((user: ApiUser) => ({
           name: `${user.name.first} ${user.name.last}`,
           position: "Team Member",
           description: `${user.name.first} is a dedicated team member contributing to our project.`,

@@ -1,11 +1,13 @@
 
 
+import Testimoni from "@/components/testimoni";
 import Image from "next/image";
+import Link from "next/link";
 
 
 export default function About() {
   return (
-    <div className="flex flex-col items-center bg-gradient-to-b from-gray-900 to-gray-700 min-h-screen py-10 px-4 md:px-10 lg:px-20">
+    <div className="flex flex-col items-center bg-gradient-to-b from-gray-900 to-gray-700 min-h-screen py-10 px-4 md:px-10 lg:px-20 gap-5">
 
       <section className="text-center py-10">
         <h1 className="text-5xl font-bold text-gray-100 mb-4 mt-3">About us</h1>
@@ -14,8 +16,7 @@ export default function About() {
         </p>
       </section>
 
-
-      <section className="flex flex-col md:flex-row items-center gap-10 bg-white shadow-lg rounded-lg p-8 my-10 w-full max-w-5xl">
+      <section className="flex flex-col md:flex-row items-center gap-10 bg-blue-300 shadow-lg rounded-lg p-8 my-10 w-full max-w-5xl">
         <div className="w-full md:w-1/2 ">
           <Image src="/about/about3.jpg" alt="Our Mission" width={500} height={200} className="rounded-lg shadow-lg transform transition-all duration-700 hover:scale-105" />
         </div>
@@ -32,6 +33,12 @@ export default function About() {
             <li>Continuous Innovation</li>
           </ul>
         </div>
+      </section>
+
+      <section className="items-center justify-center text-center w-full md:w-[40vw] bg-blue-300 py-5 rounded-3xl">
+        <p className="text-slate-100 font-semibold text-[30px]">Meet Our Team</p>
+        <Testimoni />
+      <Link href={'/team'}><p className="btn glass bg-gray-500">Load More</p></Link>
       </section>
       
       <section className="text-center py-10 w-full max-w-5xl">
@@ -57,7 +64,7 @@ export default function About() {
           </div>
           <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center text-center">
             <Image src="/classIAX/LR.png" alt="Classification" width={120} height={120} className="mx-auto mb-4" />
-            <h3 className="text-xl font-semibold">Lloyd's Register <i>(LR)</i></h3>
+            <h3 className="text-xl font-semibold">Lloyds Register <i>(LR)</i></h3>
             <p className="text-gray-500 text-center">Advanced standards in maritime service.</p>
           </div>
           <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center text-center">

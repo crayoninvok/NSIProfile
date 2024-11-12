@@ -12,11 +12,11 @@ export default async function ProductListPage() {
   }
 
   return (
-    <div className="container mx-auto py-10">
+    <div className="mx-auto py-10 bg-gradient-to-b from-gray-900 to-gray-700 w-full">
       <h1 className="text-4xl font-bold mb-12 text-center text-violet-500 mt-[6rem]">
         Product List
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mx-7">
         {products.length > 0 ? (
           products.map((product, index) => (
             <div
