@@ -4,6 +4,10 @@ const baseUrl = process.env.NEXT_PUBLIC_CONTENTFUL_BASE_URL as string;
 const spaceId = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID as string;
 const token = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN as string;
 
+if (!baseUrl || !spaceId || !token) {
+  throw new Error("Missing one or more required Contentful environment variables.");
+}
+
 interface ContentfulAsset {
   sys: {
     id: string;
@@ -19,7 +23,7 @@ interface ContentfulItem {
   fields: {
     productnavname?: string;
     description?: string;
-    price?: number; // assuming price from Contentful could be a number or undefined
+    price?: number;
     slug?: string;
     Productcomimage?: {
       sys: {
@@ -57,11 +61,11 @@ export const getProductCom = async (): Promise<IProductCom[]> => {
       fields: {
         Productcomname: productName,
         description: item.fields.description,
-        price: item.fields.price?.toString() || '', // Ensure price is a string
+        price: item.fields.price?.toString() || '',
         Productcomimage: {
           fields: {
             file: {
-              url: imageAsset?.fields.file.url || '',
+              url: imageAsset?.fields.file.url || '/placeholder.jpg', // Use placeholder if no URL
             },
           },
         },
