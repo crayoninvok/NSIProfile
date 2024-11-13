@@ -68,14 +68,14 @@ export default function Navbar() {
         />
       </Link>
 
-      {/* Desktop Links */}
+      {/* desktop besar */}
       <div className="hidden md:flex gap-5">
         {links.map((link, index) => (
           <NavLink key={index} href={link.href} label={link.label} />
         ))}
       </div>
 
-      {/* Mobile Menu Icon */}
+      {/* hp  icon */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="md:hidden text-white"
@@ -84,7 +84,7 @@ export default function Navbar() {
         {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
       </button>
 
-      {/* Mobile Menu */}
+      {/* hp Menu */}
       {isOpen && (
         <div
           className="absolute top-[5rem] left-0 w-full bg-black/75 text-white flex flex-col items-center py-5 space-y-4 md:hidden"

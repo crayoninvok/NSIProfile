@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { getTeamMembers } from "@/lib/team";
 import { ITeam } from "@/types/team";
 import { FaFacebook, FaLinkedin, FaMailBulk } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 interface IRandomUser {
   name: { first: string; last: string };
@@ -11,6 +13,14 @@ interface IRandomUser {
 }
 
 export default function TeamPage() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800, 
+      easing: "ease-in-out",
+      once: true,
+    });
+  }, []);
+
   const [teamMembers, setTeamMembers] = useState<ITeam[]>([]);
   const [selectedMember, setSelectedMember] = useState<ITeam | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -56,6 +66,7 @@ export default function TeamPage() {
     setIsModalOpen(false);
     setSelectedMember(null);
   };
+
   const handleConnect = () => {
     window.open("https://instagram.com/xeesoxee", "_blank");
   };
@@ -71,85 +82,82 @@ export default function TeamPage() {
         </p>
       </div>
 
-      {/* Director Section */}
       {director && (
-  <div className="flex justify-center mb-8">
-    <div
-      key={director.fields.name}
-      className="bg-gray-800 hover:bg-gray-700 shadow-lg rounded-lg p-6 w-full max-w-4xl transform transition-all duration-300 hover:scale-105 hover:shadow-2xl flex flex-col md:flex-row items-center"
-    >
-      {/* Photo Section */}
-      <div className="overflow-hidden rounded-lg w-40 h-40 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mb-4 md:mb-0 mr-0 md:mr-6 flex-shrink-0">
-        <img
-          src={`https:${director.fields.image.fields.file.url}`}
-          alt={`Portrait of ${director.fields.name}`}
-          className="object-cover w-full h-full"
-          loading="lazy"
-        />
-      </div>
+        <div className="flex justify-center mb-8">
+          <div
+            key={director.fields.name}
+            className="bg-gray-800 hover:bg-gray-700 shadow-lg rounded-lg p-6 w-full max-w-4xl transform transition-all duration-300 hover:scale-105 hover:shadow-2xl flex flex-col md:flex-row items-center"
+            data-aos="fade-up"
+          >
+            <div className="overflow-hidden rounded-lg w-40 h-40 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mb-4 md:mb-0 mr-0 md:mr-6 flex-shrink-0">
+              <img
+                src={`https:${director.fields.image.fields.file.url}`}
+                alt={`Portrait of ${director.fields.name}`}
+                className="object-cover w-full h-full"
+                loading="lazy"
+              />
+            </div>
 
-      {/* Text and Button Section */}
-      <div className="flex flex-col text-center md:text-left items-center md:items-start text-white space-y-4 w-full">
-        <h2 className="text-2xl md:text-3xl font-semibold">
-          {director.fields.name}
-        </h2>
-        <p className="text-gray-400">{director.fields.role}</p>
-        <p className="text-gray-300">
-          Hello, I am {director.fields.name}, founder of PT.NSI Marine.
-        </p>
-        <button
-          className="btn btn-primary btn-sm md:btn-md lg:btn-lg w-32 mt-2 hover:bg-blue-600"
-          onClick={() => handleConnect()}
-        >
-          Connect
-        </button>
-      </div>
-    </div>
-  </div>
-)}
+            <div className="flex flex-col text-center md:text-left items-center md:items-start text-white space-y-4 w-full">
+              <h2 className="text-2xl md:text-3xl font-semibold">
+                {director.fields.name}
+              </h2>
+              <p className="text-gray-400">{director.fields.role}</p>
+              <p className="text-gray-300">
+                Hello, I am {director.fields.name}, founder of PT.NSI Marine.
+              </p>
+              <button
+                className="btn btn-primary btn-sm md:btn-md lg:btn-lg w-32 mt-2 hover:bg-blue-600"
+                onClick={handleConnect}
+              >
+                Connect
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
-      {/* Core Team Section */}
       <div className="flex justify-center mb-4">
-  <div className="w-full max-w-3xl bg-gradient-to-r from-blue-900 to-gray-700 rounded-lg p-2 text-center">
-    <h1 className="font-semibold text-lg sm:text-xl">Core Team</h1>
-  </div>
-</div>
-
-<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-7xl mx-auto">
-  {otherMembers.map((member) => (
-    <div
-      key={member.fields.name}
-      className="relative bg-gray-800 shadow-lg rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl p-2 sm:p-4"
-    >
-      <img
-        src={`https:${member.fields.image.fields.file.url}`}
-        alt={member.fields.name}
-        className="object-cover w-full h-40 sm:h-52 md:h-64"
-        loading="lazy"
-      />
-
-      {/* Name and Role in Top Left */}
-      <div className="absolute top-2 left-2 bg-slate-500 bg-opacity-80 rounded-lg px-2 py-1 text-center">
-        <h2 className="text-xs sm:text-sm font-semibold text-white">
-          {member.fields.name}
-        </h2>
-        <p className="text-xs text-gray-300">{member.fields.role}</p>
+        <div className="w-full max-w-3xl bg-gradient-to-r from-blue-900 to-gray-700 rounded-lg p-2 text-center">
+          <h1 className="font-semibold text-lg sm:text-xl">Core Team</h1>
+        </div>
       </div>
 
-      {/* Overlay with Connect Button, only visible on hover */}
-      <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-        <button
-          className="btn glass btn-xs sm:btn-sm hover:bg-blue-600"
-          onClick={() => openModal(member)}
-        >
-          Connect
-        </button>
-      </div>
-    </div>
-  ))}
-</div>
+ 
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-7xl mx-auto">
+        {otherMembers.map((member, index) => (
+          <div
+            key={member.fields.name}
+            className="relative bg-gray-800 shadow-lg rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl p-2 sm:p-4"
+            data-aos="fade-up"
+            data-aos-delay={index * 100} 
+          >
+            <img
+              src={`https:${member.fields.image.fields.file.url}`}
+              alt={member.fields.name}
+              className="object-cover w-full h-40 sm:h-52 md:h-64"
+              loading="lazy"
+            />
 
-      {/* Other Team Section */}
+            <div className="absolute top-2 left-2 bg-slate-500 bg-opacity-80 rounded-lg px-2 py-1 text-center">
+              <h2 className="text-xs sm:text-sm font-semibold text-white">
+                {member.fields.name}
+              </h2>
+              <p className="text-xs text-gray-300">{member.fields.role}</p>
+            </div>
+
+            <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <button
+                className="btn glass btn-xs sm:btn-sm hover:bg-blue-600"
+                onClick={() => openModal(member)}
+              >
+                Connect
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+
       <div className="flex justify-center mt-8 mb-4">
         <div className="w-full max-w-3xl bg-gradient-to-r from-gray-700 to-blue-900 rounded-lg p-2 text-center">
           <h1 className="font-semibold text-lg sm:text-xl">Other Team</h1>
@@ -161,6 +169,8 @@ export default function TeamPage() {
           <div
             key={index}
             className="bg-gray-800 hover:bg-gray-700 shadow-lg rounded-lg p-6 text-center transform transition-all duration-300 hover:scale-110 hover:shadow-3xl"
+            data-aos="fade-up"
+            data-aos-delay={index * 100} 
           >
             <div className="overflow-hidden rounded-lg mx-auto mb-4 w-24 h-24">
               <img
@@ -178,7 +188,7 @@ export default function TeamPage() {
         ))}
       </div>
 
-      {/* Modal */}
+
       {isModalOpen && selectedMember && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 p-4">
           <div className="bg-gray-800 rounded-lg p-6 sm:p-8 w-full max-w-md text-center relative">

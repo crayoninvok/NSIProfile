@@ -74,7 +74,7 @@ export default function OurCustomers() {
               objectFit="cover"
               className="absolute inset-0 z-0"
             />
-            {/* Overlay for text */}
+    
             <div className="relative z-10 flex flex-col justify-center items-center bg-black/60 w-full h-full p-4 text-white">
               <h3 className="text-xl font-semibold mb-2">{customer.name}</h3>
               <p className="text-sm text-center">{customer.description}</p>

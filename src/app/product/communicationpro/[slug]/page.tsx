@@ -9,7 +9,7 @@ type ProductPageProps = {
   };
 };
 
-// This function generates the paths for each product's slug
+
 export async function generateStaticParams() {
   const products = await getProductCom();
   return products.map((product) => ({
@@ -25,7 +25,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
     return <div>Product not found</div>;
   }
 
-  // Custom render options for compact rich text
   const renderOptions = {
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node: Node, children: React.ReactNode) => (
@@ -68,7 +67,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </button>
       </Link>
       <div className="flex flex-col lg:flex-row bg-white rounded-lg shadow-lg p-8 lg:p-12 max-w-[80%] mx-auto">
-        {/* Image Section */}
+
         <div className="w-full lg:w-[40%] mb-8 lg:mb-0 h-full">
           <img
             src={product.fields.Productcomimage.fields.file.url}
@@ -77,7 +76,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
           />
         </div>
 
-        {/* Details Section */}
         <div className="w-full lg:w-[50%] lg:pl-10">
           <h1 className="text-3xl font-semibold text-gray-800 mb-4">
             {product.fields.Productcomname}

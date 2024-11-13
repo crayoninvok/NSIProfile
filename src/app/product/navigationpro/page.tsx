@@ -36,10 +36,10 @@ export default async function ProductListNav() {
                   <Image
                     src={`https:${product.fields.productImage.fields.file.url}`}
                     alt={product.fields.productName}
-                    width={300} // Adjust as per layout needs
-                    height={200} // Adjust as per layout needs
+                    width={300} 
+                    height={200} 
                     className="object-cover rounded-md mb-4 shadow-md"
-                    loading="lazy" // Lazy loads the image
+                    loading="lazy" 
                   />
                 ) : (
                   <div className="w-full h-48 bg-gray-500 flex items-center justify-center rounded-md mb-4 shadow-md">

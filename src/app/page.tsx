@@ -10,8 +10,19 @@ import ProdukHome from "@/components/productoverview";
 import { Cover } from "@/components/ui/cover";
 import { HiArrowCircleDown } from "react-icons/hi";
 import OurCustomers from "@/components/ourcostumer";
+import AOS from "aos";
+import { useEffect } from "react";
+import "aos/dist/aos.css";
+
 
 export default function Home() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800, // Duration of animations in milliseconds
+      easing: "ease-in-out", // Easing function for animations
+      once: true, // Animation will only happen once
+    });
+  }, []);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
@@ -41,8 +52,8 @@ export default function Home() {
   ];
 
   return (
-    <main className="flex flex-col min-h-screen bg-gray-900">
-      <section className="relative w-full h-[80vh] sm:h-[85vh] md:h-[90vh] lg:h-[97vh]">
+    <div className="flex flex-col min-h-screen bg-gray-900">
+      <div className="relative w-full h-[80vh] sm:h-[85vh] md:h-[90vh] lg:h-[97vh]">
         <video
           src="/home/intro01.mp4"
           autoPlay
@@ -134,9 +145,9 @@ export default function Home() {
             </button>
           </Dialog.Panel>
         </Dialog>
-      </section>
+      </div>
 
-      <section className="flex flex-col md:flex-row items-center justify-center bg-gradient-to-b from-gray-900 to-blue-900 p-6 mt-6 space-y-8 md:space-y-0 md:space-x-8">
+      <div className="flex flex-col md:flex-row items-center justify-center bg-gradient-to-b from-gray-900 to-blue-900 p-6 mt-6 space-y-8 md:space-y-0 md:space-x-8">
         <div className="relative w-full md:w-1/2 lg:w-1/3 h-64 sm:h-80">
           <Image
             src="/home/fsg.jpg"
@@ -166,15 +177,15 @@ export default function Home() {
             About NSI Marine
           </Link>
         </div>
-      </section>
+      </div>
 
-      <section className="h-auto bg-gradient-to-b from-blue-900 to-blue-800 py-10">
+      <div className="h-auto bg-gradient-to-b from-blue-900 to-blue-800 py-10">
         <ProdukHome />
-      </section>
+      </div>
 
-      <section className="bg-gradient-to-b from-blue-800 to-blue-600 py-5 flex items-center justify-center hero w-full">
+      <div className="bg-gradient-to-b from-blue-800 to-blue-600 py-5 flex items-center justify-center hero w-full">
         <OurCustomers />
-      </section>
-    </main>
+      </div>
+    </div>
   );
 }

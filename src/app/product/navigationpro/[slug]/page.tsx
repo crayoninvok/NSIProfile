@@ -61,19 +61,19 @@ export default async function ProductPage({ params }: ProductPageProps) {
       </Link>
 
       <div className="flex flex-col lg:flex-row bg-white rounded-lg shadow-lg p-8 lg:p-12 max-w-[80%] mx-auto">
-        {/* Image Section */}
+    
         <div className="w-full lg:w-[50%] mb-8 lg:mb-0">
           <Image
             src={`https:${product.fields.productImage.fields.file.url}`}
             alt={product.fields.productName}
-            width={500} // Adjust width to your layout requirements
-            height={500} // Adjust height to your layout requirements
+            width={500} 
+            height={500} 
             className="object-cover rounded-md shadow-sm"
-            priority // Loads the image immediately as it's the main content
+            priority 
           />
         </div>
 
-        {/* Details Section */}
+
         <div className="w-full lg:w-[50%] lg:pl-10">
           <h1 className="text-3xl font-semibold text-gray-800 mb-4">
             {product.fields.productName}

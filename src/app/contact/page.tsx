@@ -26,7 +26,7 @@ export default function ContactUsPage() {
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row items-center justify-center bg-gray-900 px-4 py-8 md:py-16 gap-8 md:gap-3">
-      {/* Video Section */}
+ 
       <div className="w-full md:w-[50%] flex justify-center mt-[3rem]">
         <div className="card bg-transparent">
           <div className="mockup-phone border-primary">
@@ -48,7 +48,7 @@ export default function ContactUsPage() {
         </div>
       </div>
 
-      {/* Contact Form Section */}
+
       <div className="w-full md:w-[50%] max-w-3xl bg-gray-800 shadow-2xl rounded-lg p-6 lg:p-8">
         <h1 className="text-3xl md:text-4xl font-bold text-center text-white mb-6">
           Contact Us

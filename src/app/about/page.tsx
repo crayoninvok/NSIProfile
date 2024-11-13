@@ -35,7 +35,7 @@ export default function About() {
       animate="visible"
       variants={staggerContainer}
     >
-      {/* Logo and About Us Section */}
+ 
       <motion.div
         className="flex flex-col md:flex-row items-center justify-center h-[40vh] py-10 mt-[13rem] mb-[7rem] md:mb-[0rem] md:mt-[3rem]"
         variants={fadeInUp}
@@ -55,7 +55,7 @@ export default function About() {
         </div>
       </motion.div>
 
-      {/* Mission and Values Section */}
+ 
       <motion.section
         className="flex flex-col md:flex-row items-center gap-5 bg-gradient-to-r from-gray-500 to-blue-200 shadow-lg rounded-lg p-8 my-10 w-full max-w-4xl"
         variants={fadeInLeft}
@@ -86,7 +86,7 @@ export default function About() {
         </div>
       </motion.section>
 
-      {/* Team Overview Section */}
+    
       <motion.section
         className="items-center justify-center text-center w-full md:w-[47vw] md:h-[70vh] bg-gradient-to-r from-gray-500 to-blue-200 py-5 rounded-3xl"
         variants={fadeInRight}
@@ -98,7 +98,7 @@ export default function About() {
         </Link>
       </motion.section>
 
-      {/* Approved Classification Section */}
+    
       <motion.section
         className="text-center py-10 w-full max-w-5xl"
         variants={fadeInUp}
@@ -144,7 +144,7 @@ export default function About() {
         </section>
       </motion.section>
 
-      {/* Manufacture Partner Section */}
+  
       <motion.section
         className="w-full py-10 bg-gray-400 text-white text-center"
         variants={fadeInUp}
