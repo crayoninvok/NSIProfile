@@ -53,7 +53,7 @@ const customers: Customer[] = [
 
 export default function OurCustomers() {
   return (
-    <div className="w-full py-10 bg-transparent dark:bg-neutral-900">
+    <div className="w-full py-5 bg-transparent dark:bg-neutral-900">
       <h2 className="text-3xl md:text-5xl font-bold text-center text-gray-300 dark:text-neutral-200 mb-10">
         Our Customers
       </h2>

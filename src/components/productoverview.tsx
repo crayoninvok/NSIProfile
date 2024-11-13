@@ -73,7 +73,7 @@ export default function ProdukHome() {
   }, [products]);
 
   return (
-    <div className="flex flex-col items-center bg-transparent py-16">
+    <div className="flex flex-col items-center bg-transparent py-5">
       <h2 className="text-3xl md:text-5xl font-bold text-center text-gray-300 dark:text-neutral-200 mb-10">Our Offerings</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 md:px-8 lg:px-16">
         
@@ -89,7 +89,7 @@ export default function ProdukHome() {
               />
             </div>
             <h3 className="text-2xl font-semibold text-gray-800">{product.title}</h3>
-            <p className="text-gray-600 mt-2 mb-4">{product.description}</p>
+            <p className="text-gray-600 mt-2">{product.description}</p>
             <Link href={product.link} className="text-teal-500 font-semibold hover:underline">
               Learn More
             </Link>
