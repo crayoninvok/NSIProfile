@@ -40,16 +40,16 @@ export default function Footer() {
         <div>
           <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
           <div className="flex space-x-4">
-            <a href="#" className="hover:text-teal-400 transition">
+            <a href="https://www.facebook.com/?locale=id_ID" className="hover:text-teal-400 transition">
               <FaFacebook size={24} />
             </a>
-            <a href="#" className="hover:text-teal-400 transition">
+            <a href="https://x.com/?lang=id" className="hover:text-teal-400 transition">
               <FaTwitter size={24} />
             </a>
-            <a href="#" className="hover:text-teal-400 transition">
+            <a href="https://www.instagram.com/" className="hover:text-teal-400 transition">
               <FaInstagram size={24} />
             </a>
-            <a href="#" className="hover:text-teal-400 transition">
+            <a href="https://www.linkedin.com/" className="hover:text-teal-400 transition">
               <FaLinkedin size={24} />
             </a>
           </div>
