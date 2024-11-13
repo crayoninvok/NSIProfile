@@ -82,6 +82,12 @@ export default function TeamPage() {
                 alt={director.fields.name}
                 className="object-cover w-full h-full"
                 loading="lazy"
+                srcSet={`
+                  https:${director.fields.image.fields.file.url}?w=200 200w,
+                  https:${director.fields.image.fields.file.url}?w=400 400w,
+                  https:${director.fields.image.fields.file.url}?w=600 600w
+                `}
+                sizes="(max-width: 600px) 100vw, (min-width: 601px) 50vw, 33vw"
               />
             </div>
 
@@ -121,6 +127,12 @@ export default function TeamPage() {
               alt={member.fields.name}
               className="object-cover w-full h-full"
               loading="lazy"
+              srcSet={`
+                https:${member.fields.image.fields.file.url}?w=200 200w,
+                https:${member.fields.image.fields.file.url}?w=400 400w,
+                https:${member.fields.image.fields.file.url}?w=600 600w
+              `}
+              sizes="(max-width: 600px) 100vw, (min-width: 601px) 50vw, 33vw"
             />
 
             <div className="absolute top-2 left-2 bg-slate-500 bg-opacity-80 rounded-lg px-2 py-1 text-center">
