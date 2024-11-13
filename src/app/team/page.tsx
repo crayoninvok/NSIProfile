@@ -82,12 +82,6 @@ export default function TeamPage() {
                 alt={director.fields.name}
                 className="object-cover w-full h-full"
                 loading="lazy"
-                srcSet={`
-                  https:${director.fields.image.fields.file.url}?w=200 200w,
-                  https:${director.fields.image.fields.file.url}?w=400 400w,
-                  https:${director.fields.image.fields.file.url}?w=600 600w
-                `}
-                sizes="(max-width: 600px) 100vw, (min-width: 601px) 50vw, 33vw"
               />
             </div>
 
@@ -111,48 +105,44 @@ export default function TeamPage() {
 
       {/* Core Team Section */}
       <div className="flex justify-center mb-4">
-        <div className="w-full max-w-3xl bg-gradient-to-r from-blue-900 to-gray-700 rounded-lg p-2 text-center">
-          <h1 className="font-semibold text-lg sm:text-xl">Core Team</h1>
-        </div>
+  <div className="w-full max-w-3xl bg-gradient-to-r from-blue-900 to-gray-700 rounded-lg p-2 text-center">
+    <h1 className="font-semibold text-lg sm:text-xl">Core Team</h1>
+  </div>
+</div>
+
+<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-7xl mx-auto">
+  {otherMembers.map((member) => (
+    <div
+      key={member.fields.name}
+      className="relative bg-gray-800 shadow-lg rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl p-2 sm:p-4"
+    >
+      <img
+        src={`https:${member.fields.image.fields.file.url}`}
+        alt={member.fields.name}
+        className="object-cover w-full h-40 sm:h-52 md:h-64"
+        loading="lazy"
+      />
+
+      {/* Name and Role in Top Left */}
+      <div className="absolute top-2 left-2 bg-slate-500 bg-opacity-80 rounded-lg px-2 py-1 text-center">
+        <h2 className="text-xs sm:text-sm font-semibold text-white">
+          {member.fields.name}
+        </h2>
+        <p className="text-xs text-gray-300">{member.fields.role}</p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-        {otherMembers.map((member) => (
-          <div
-            key={member.fields.name}
-            className="relative bg-gray-800 shadow-lg rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-          >
-            <img
-              src={`https:${member.fields.image.fields.file.url}`}
-              alt={member.fields.name}
-              className="object-cover w-full h-full"
-              loading="lazy"
-              srcSet={`
-                https:${member.fields.image.fields.file.url}?w=200 200w,
-                https:${member.fields.image.fields.file.url}?w=400 400w,
-                https:${member.fields.image.fields.file.url}?w=600 600w
-              `}
-              sizes="(max-width: 600px) 100vw, (min-width: 601px) 50vw, 33vw"
-            />
-
-            <div className="absolute top-2 left-2 bg-slate-500 bg-opacity-80 rounded-lg px-2 py-1 text-center">
-              <h2 className="text-sm sm:text-base font-semibold text-white">
-                {member.fields.name}
-              </h2>
-              <p className="text-xs text-gray-300">{member.fields.role}</p>
-            </div>
-
-            <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-              <button
-                className="btn glass btn-primary btn-sm hover:bg-blue-600"
-                onClick={() => openModal(member)}
-              >
-                Connect
-              </button>
-            </div>
-          </div>
-        ))}
+      {/* Overlay with Connect Button, only visible on hover */}
+      <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <button
+          className="btn glass btn-xs sm:btn-sm hover:bg-blue-600"
+          onClick={() => openModal(member)}
+        >
+          Connect
+        </button>
       </div>
+    </div>
+  ))}
+</div>
 
       {/* Other Team Section */}
       <div className="flex justify-center mt-8 mb-4">
