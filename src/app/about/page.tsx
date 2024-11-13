@@ -43,7 +43,7 @@ export default function About() {
         <div className="flex items-center justify-center w-full md:w-1/2 mb-4 md:mb-0">
           <Image src="/about/fotologo.jpg" alt="NSI Logo" width={200} height={200} />
         </div>
-        <div className="text-center md:text-left w-full md:w-1/2 px-4">
+        <div className="lcp-paragraph">
           <h1 className="text-5xl font-bold text-white mb-4 mt-3">About us</h1>
           <p className="text-lg text-gray-200 max-w-3xl mx-auto">
             Founded in 2024, Nautika Sentra Indonesia was established with a vision to revolutionize
