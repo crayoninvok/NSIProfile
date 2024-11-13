@@ -2,6 +2,7 @@ import { getProductNav } from "@/lib/productn";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { Document, BLOCKS, INLINES, Node } from "@contentful/rich-text-types";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 
 type ProductPageProps = {
@@ -19,7 +20,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
     return null;
   }
 
-  // Custom render options for Contentful rich text
   const renderOptions = {
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node: Node, children: React.ReactNode) => (
@@ -53,18 +53,23 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   return (
     <div className="min-h-screen flex flex-col items-start justify-center py-5 bg-gray-200">
-      <Link href="/product/navigationpro" passHref>
-        <button className="btn text-gray-800 hover:text-gray-600 mb-4 inline-flex items-center mt-[5rem] lg:ml-[12rem] ml-[2rem] font-semibold">
-          ← Back
-        </button>
+      <Link
+        href="/product/navigationpro"
+        className="btn text-gray-800 hover:text-gray-600 mb-4 inline-flex items-center mt-[5rem] lg:ml-[12rem] ml-[2rem] font-semibold"
+      >
+        ← Back
       </Link>
+
       <div className="flex flex-col lg:flex-row bg-white rounded-lg shadow-lg p-8 lg:p-12 max-w-[80%] mx-auto">
         {/* Image Section */}
         <div className="w-full lg:w-[50%] mb-8 lg:mb-0">
-          <img
-            src={product.fields.productImage.fields.file.url}
+          <Image
+            src={`https:${product.fields.productImage.fields.file.url}`}
             alt={product.fields.productName}
-            className="object-cover rounded-md shadow-sm w-full"
+            width={500} // Adjust width to your layout requirements
+            height={500} // Adjust height to your layout requirements
+            className="object-cover rounded-md shadow-sm"
+            priority // Loads the image immediately as it's the main content
           />
         </div>
 
@@ -81,7 +86,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <p className="text-lg font-medium text-gray-600 mb-4">
             {product.fields.price}
           </p>
-          <button className="w-full lg:w-auto px-6 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded shadow transition duration-300">
+          <button className="w-full lg:w-auto px-6 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded shadow transition-transform duration-200">
             Buy Now
           </button>
         </div>

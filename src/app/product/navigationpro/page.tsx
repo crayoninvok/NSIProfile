@@ -1,6 +1,7 @@
 import { getProductNav } from "@/lib/productn";
 import { IProNav } from "@/types/productn";
 import Link from "next/link";
+import Image from "next/image";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -14,51 +15,56 @@ export default async function ProductListNav() {
   return (
     <div className="mx-auto py-10 bg-gradient-to-b from-gray-900 to-gray-700 w-full px-[3rem]">
       <div className="flex flex-col justify-center">
-      <h1 className="text-4xl font-bold text-center text-violet-500 mt-[10vh]">
-        Navigation Products
-      </h1>
-       <Link href="/product/" passHref>
-        <button className="btn text-gray-800 hover:text-gray-600 mb-4 inline-flex items-center mt-[2rem] font-semibold">
-          ← Back
-        </button>
-      </Link>
+        <h1 className="text-4xl font-bold text-center text-violet-500 mt-[10vh]">
+          Navigation Products
+        </h1>
+        
+        <Link href="/product/" passHref>
+          <button className="btn text-gray-800 hover:text-gray-600 mb-4 inline-flex items-center mt-[2rem] font-semibold">
+            ← Back
+          </button>
+        </Link>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-        {products.length > 0 ? (
-          products.map((product, index) => (
-            <div
-              key={index}
-              className="bg-gray-900 hover:bg-gray-800 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 p-5 flex flex-col items-center"
-            >
-              {product.fields.productImage?.fields.file.url ? (
-                <img
-                  src={product.fields.productImage.fields.file.url}
-                  alt={product.fields.productName}
-                  className="w-full h-48 object-cover rounded-md mb-4 shadow-md"
-                />
-              ) : (
-                <div className="w-full h-48 bg-gray-500 flex items-center justify-center rounded-md mb-4 shadow-md">
-                  <span className="text-white">Image not available</span>
-                </div>
-              )}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          {products.length > 0 ? (
+            products.map((product, index) => (
+              <div
+                key={index}
+                className="bg-gray-900 hover:bg-gray-800 rounded-lg shadow-lg transform transition-transform duration-200 hover:scale-105 p-5 flex flex-col items-center"
+              >
+                {product.fields.productImage?.fields.file.url ? (
+                  <Image
+                    src={`https:${product.fields.productImage.fields.file.url}`}
+                    alt={product.fields.productName}
+                    width={300} // Adjust as per layout needs
+                    height={200} // Adjust as per layout needs
+                    className="object-cover rounded-md mb-4 shadow-md"
+                    loading="lazy" // Lazy loads the image
+                  />
+                ) : (
+                  <div className="w-full h-48 bg-gray-500 flex items-center justify-center rounded-md mb-4 shadow-md">
+                    <span className="text-white">Image not available</span>
+                  </div>
+                )}
 
-              <h2 className="text-xl font-semibold text-center text-violet-100 mb-2">
-                {product.fields.productName}
-              </h2>
-              <p className="text-gray-400 text-sm mb-2">
-                {product.fields.price}
-              </p>
-               <Link href={`/product/navigationpro/${product.fields.slug}`} passHref>
-              <button className="px-4 py-2 mt-auto bg-violet-600 hover:bg-violet-700 text-white rounded-md shadow-md transition duration-300">
-                  View Details
-                </button>
+                <h2 className="text-xl font-semibold text-center text-violet-100 mb-2">
+                  {product.fields.productName}
+                </h2>
+                <p className="text-gray-400 text-sm mb-2">
+                  {product.fields.price}
+                </p>
+                
+                <Link href={`/product/navigationpro/${product.fields.slug}`} passHref>
+                  <button className="px-4 py-2 mt-auto bg-violet-600 hover:bg-violet-700 text-white rounded-md shadow-md transition-colors duration-200">
+                    View Details
+                  </button>
                 </Link>
-            </div>
-          ))
-        ) : (
-          <p className="text-center text-gray-500 text-lg">No products available.</p>
-        )}
-      </div>
+              </div>
+            ))
+          ) : (
+            <p className="text-center text-gray-500 text-lg">No products available.</p>
+          )}
+        </div>
       </div>
     </div>
   );
