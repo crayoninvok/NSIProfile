@@ -5,6 +5,23 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
+interface NavLinkProps {
+  href: string;
+  label: string;
+  onClick?: () => void;
+}
+
+const NavLink: React.FC<NavLinkProps> = ({ href, label, onClick }) => (
+  <Link
+    href={href}
+    className="btn glass text-white bg-slate-800 w-full text-center md:bg-slate-800 md:w-auto md:glass md:text-white"
+    aria-label={`Navigate to ${label}`}
+    onClick={onClick}
+  >
+    {label}
+  </Link>
+);
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
@@ -12,87 +29,78 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (typeof window !== "undefined") {
-        if (window.scrollY > lastScrollY) {
-          setIsVisible(false); // Hide navbar when scrolling down
-        } else {
-          setIsVisible(true); // Show navbar when scrolling up
-        }
-        setLastScrollY(window.scrollY);
+      if (window.scrollY > lastScrollY) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
       }
+      setLastScrollY(window.scrollY);
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
+  const links = [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About Us" },
+    { href: "/product", label: "Our Service and Products" },
+    { href: "/team", label: "Our Team" },
+    { href: "/contact", label: "Contact Us" },
+  ];
+
   return (
-    <div
-      className={`flex fixed justify-center h-[5rem] w-full items-center bg-transparent backdrop-blur-md z-20 px-10 transition-transform duration-300 ${
+    <nav
+      className={`fixed top-0 left-0 w-full h-[5rem] flex items-center justify-between bg-transparent backdrop-blur-md z-20 px-4 md:px-10 transition-transform duration-300 ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
+      role="navigation"
+      aria-label="Main Navigation"
     >
-      <Link href="/">
-        <div className="mr-10">
-          <Image
-            src="/navbar/LogoWPolos.png"
-            alt="Logo"
-            width={60}
-            height={60}
-            className="ml-4 bg-black rounded-full"
-          />
-        </div>
+      <Link href="/" aria-label="Homepage">
+        <Image
+          src="/navbar/LogoWPolos.png"
+          alt="Website Logo"
+          width={60}
+          height={60}
+          priority
+          className="ml-4 rounded-full"
+        />
       </Link>
 
       {/* Desktop Links */}
-      <div className="hidden md:flex gap-5 mr-10">
-        <Link href="/" className="btn glass text-white bg-slate-800">
-          Home
-        </Link>
-        <Link href="/about" className="btn glass text-white bg-slate-800">
-          About Us
-        </Link>
-        <Link href="/product" className="btn glass text-white bg-slate-800">
-          Our Service and Products
-        </Link>
-        <Link href="/team" className="btn glass text-white bg-slate-800">
-          Our Team
-        </Link>
-        <Link href="/contact" className="btn glass text-white bg-slate-800">
-          Contact Us
-        </Link>
+      <div className="hidden md:flex gap-5">
+        {links.map((link, index) => (
+          <NavLink key={index} href={link.href} label={link.label} />
+        ))}
       </div>
 
       {/* Mobile Menu Icon */}
-      <div className="md:hidden flex items-center mr-4">
-        <button onClick={() => setIsOpen(!isOpen)} className="text-white">
-          {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-        </button>
-      </div>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="md:hidden text-white"
+        aria-label={isOpen ? "Close menu" : "Open menu"}
+      >
+        {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+      </button>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute top-[5rem] left-0 w-full backdrop-blur-xl bg-black/35 text-white flex flex-col items-center py-5 space-y-4 md:hidden">
-          <Link href="/" className="btn bg-blue-400 w-[50vw] text-center border-transparent" onClick={() => setIsOpen(false)}>
-            Home
-          </Link>
-          <Link href="/about" className="btn bg-blue-400 w-[50vw] text-center border-transparent" onClick={() => setIsOpen(false)}>
-            About Us
-          </Link>
-          <Link href="/product" className="btn bg-blue-400 w-[50vw] text-center border-transparent" onClick={() => setIsOpen(false)}>
-            Our Service and Products
-          </Link>
-          <Link href="/team" className="btn bg-blue-400 w-[50vw] text-center border-transparent" onClick={() => setIsOpen(false)}>
-            Our Team
-          </Link>
-          <Link href="/contact" className="btn bg-blue-400 w-[50vw] text-center border-transparent" onClick={() => setIsOpen(false)}>
-            Contact Us
-          </Link>
+        <div
+          className="absolute top-[5rem] left-0 w-full bg-black/75 text-white flex flex-col items-center py-5 space-y-4 md:hidden"
+          role="menu"
+          aria-label="Mobile Menu"
+        >
+          {links.map((link, index) => (
+            <NavLink
+              key={index}
+              href={link.href}
+              label={link.label}
+              onClick={() => setIsOpen(false)}
+            />
+          ))}
         </div>
       )}
-    </div>
+    </nav>
   );
 }

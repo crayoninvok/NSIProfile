@@ -41,14 +41,15 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-900">
-      <div className="relative w-full h-[80vh] sm:h-[85vh] md:h-[90vh] lg:h-[97vh]">
+    <main className="flex flex-col min-h-screen bg-gray-900">
+      <section className="relative w-full h-[80vh] sm:h-[85vh] md:h-[90vh] lg:h-[97vh]">
         <video
           src="/home/intro01.mp4"
           autoPlay
           loop
           muted
           className="object-cover w-full h-full"
+          preload="auto"
         />
         <div className="absolute inset-0 bg-black bg-opacity-30"></div>
 
@@ -70,7 +71,7 @@ export default function Home() {
                 className="flex flex-col items-center bg-white bg-opacity-80 shadow-lg rounded-lg p-4 text-center"
               >
                 <h2 className="font-bold text-lg flex gap-2 items-center text-teal-500">
-                  <Icon className="text-teal-500" /> {title}
+                  <Icon className="text-teal-500" aria-hidden="true" /> {title}
                 </h2>
                 <p className="text-gray-700 text-sm mt-2">{text}</p>
               </div>
@@ -90,6 +91,7 @@ export default function Home() {
             <button
               className="mt-2 bg-teal-500 text-white py-1 px-4 rounded"
               onClick={openModal}
+              aria-label="Open Services Modal"
             >
               <HiArrowCircleDown />
             </button>
@@ -105,6 +107,9 @@ export default function Home() {
             <Dialog.Title className="text-xl font-bold mb-4 text-center">
               Our Services
             </Dialog.Title>
+            <Dialog.Description className="text-sm text-gray-700 mb-4 text-center">
+              Explore various solutions, training options, and customer support locations.
+            </Dialog.Description>
             <div className="grid grid-cols-1 gap-4">
               {cards.map(({ title, icon: Icon, text }, idx) => (
                 <div
@@ -112,7 +117,7 @@ export default function Home() {
                   className="flex flex-col items-center bg-gray-100 shadow-md rounded-lg p-4"
                 >
                   <h2 className="font-bold text-lg flex gap-2 items-center text-teal-500">
-                    <Icon className="text-teal-500" /> {title}
+                    <Icon className="text-teal-500" aria-hidden="true" /> {title}
                   </h2>
                   <p className="text-gray-700 text-sm text-center mt-2">
                     {text}
@@ -123,14 +128,15 @@ export default function Home() {
             <button
               onClick={closeModal}
               className="mt-4 bg-red-500 text-white py-1 px-4 rounded w-full"
+              aria-label="Close Services Modal"
             >
               Close
             </button>
           </Dialog.Panel>
         </Dialog>
-      </div>
+      </section>
 
-      <div className="flex flex-col md:flex-row items-center justify-center bg-gradient-to-b from-gray-900 to-blue-900 p-6 mt-6 space-y-8 md:space-y-0 md:space-x-8">
+      <section className="flex flex-col md:flex-row items-center justify-center bg-gradient-to-b from-gray-900 to-blue-900 p-6 mt-6 space-y-8 md:space-y-0 md:space-x-8">
         <div className="relative w-full md:w-1/2 lg:w-1/3 h-64 sm:h-80">
           <Image
             src="/home/fsg.jpg"
@@ -138,6 +144,7 @@ export default function Home() {
             layout="fill"
             style={{ objectFit: "cover" }}
             className="rounded-lg shadow-lg"
+            priority
           />
         </div>
 
@@ -159,15 +166,15 @@ export default function Home() {
             About NSI Marine
           </Link>
         </div>
-      </div>
+      </section>
 
-      <div className="h-auto bg-gradient-to-b from-blue-900 to-blue-800 py-10">
+      <section className="h-auto bg-gradient-to-b from-blue-900 to-blue-800 py-10">
         <ProdukHome />
-      </div>
+      </section>
 
-      <div className="bg-gradient-to-b from-blue-800 to-blue-600 py-5 flex items-center justify-center hero w-full">
+      <section className="bg-gradient-to-b from-blue-800 to-blue-600 py-5 flex items-center justify-center hero w-full">
         <OurCustomers />
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
