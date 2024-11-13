@@ -56,6 +56,9 @@ export default function TeamPage() {
     setIsModalOpen(false);
     setSelectedMember(null);
   };
+  const handleConnect = () => {
+    window.open("https://instagram.com/xeesoxee", "_blank");
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-700 p-4 sm:p-6 md:p-8 text-white">
@@ -70,38 +73,40 @@ export default function TeamPage() {
 
       {/* Director Section */}
       {director && (
-        <div className="flex justify-center mb-8">
-          <div
-            key={director.fields.name}
-            className="bg-gray-800 hover:bg-gray-700 shadow-lg rounded-lg p-6 w-full max-w-4xl transform transition-all duration-300 hover:scale-105 hover:shadow-2xl flex flex-col md:flex-row items-center"
-          >
-            {/* Photo Section */}
-            <div className="overflow-hidden rounded-lg w-40 h-40 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mb-4 md:mb-0 mr-0 md:mr-6 flex-shrink-0">
-              <img
-                src={`https:${director.fields.image.fields.file.url}`}
-                alt={director.fields.name}
-                className="object-cover w-full h-full"
-                loading="lazy"
-              />
-            </div>
+  <div className="flex justify-center mb-8">
+    <div
+      key={director.fields.name}
+      className="bg-gray-800 hover:bg-gray-700 shadow-lg rounded-lg p-6 w-full max-w-4xl transform transition-all duration-300 hover:scale-105 hover:shadow-2xl flex flex-col md:flex-row items-center"
+    >
+      {/* Photo Section */}
+      <div className="overflow-hidden rounded-lg w-40 h-40 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mb-4 md:mb-0 mr-0 md:mr-6 flex-shrink-0">
+        <img
+          src={`https:${director.fields.image.fields.file.url}`}
+          alt={`Portrait of ${director.fields.name}`}
+          className="object-cover w-full h-full"
+          loading="lazy"
+        />
+      </div>
 
-            {/* Text and Button Section */}
-            <div className="flex flex-col text-center md:text-left items-center md:items-start text-white space-y-4 w-full">
-              <h2 className="text-2xl md:text-3xl font-semibold">
-                {director.fields.name}
-              </h2>
-              <p className="text-gray-400">{director.fields.role}</p>
-              <p className="text-gray-300">Hello, I am Sohee, founder of PT.NSI Marine.</p>
-              <button
-                className="btn btn-primary btn-sm md:btn-md lg:btn-lg w-32 mt-2 hover:bg-blue-600"
-                onClick={() => window.open("https://instagram.com/xeesoxee", "_blank")}
-              >
-                Connect
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Text and Button Section */}
+      <div className="flex flex-col text-center md:text-left items-center md:items-start text-white space-y-4 w-full">
+        <h2 className="text-2xl md:text-3xl font-semibold">
+          {director.fields.name}
+        </h2>
+        <p className="text-gray-400">{director.fields.role}</p>
+        <p className="text-gray-300">
+          Hello, I am {director.fields.name}, founder of PT.NSI Marine.
+        </p>
+        <button
+          className="btn btn-primary btn-sm md:btn-md lg:btn-lg w-32 mt-2 hover:bg-blue-600"
+          onClick={() => handleConnect()}
+        >
+          Connect
+        </button>
+      </div>
+    </div>
+  </div>
+)}
 
       {/* Core Team Section */}
       <div className="flex justify-center mb-4">
