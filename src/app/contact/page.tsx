@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Input, Textarea } from "@nextui-org/react"; // Import NextUI components
-
+import { Input, Textarea } from "@nextui-org/react";
 
 export default function ContactUsPage() {
   const [form, setForm] = useState({
@@ -26,32 +25,36 @@ export default function ContactUsPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-900 px-4 py-16 flex-col md:flex-row gap-3 ">
-      <div className="w-[50%] text-center justify-center card h-[90vh] bg-transparant">
-        <div className="mockup-phone border-primary">
-          <div className="camera"></div>
-          <div className="display">
-            <div className="artboard artboard-demo phone-1">
-              <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/embed/I4ODTTi810A?autoplay=1&mute=1&loop=1&playlist=I4ODTTi810A"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+    <div className="min-h-screen flex flex-col md:flex-row items-center justify-center bg-gray-900 px-4 py-8 md:py-16 gap-8 md:gap-3">
+      {/* Video Section */}
+      <div className="w-full md:w-[50%] flex justify-center mt-[3rem]">
+        <div className="card bg-transparent">
+          <div className="mockup-phone border-primary">
+            <div className="camera"></div>
+            <div className="display">
+              <div className="artboard artboard-demo phone-1">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/I4ODTTi810A?autoplay=1&mute=1&loop=1&playlist=I4ODTTi810A"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="card max-w-3xl bg-gray-800 shadow-2xl rounded-lg p-6 lg:p-8 w-[50%]">
-        <h1 className="text-4xl font-bold text-center text-white mb-6">
+      {/* Contact Form Section */}
+      <div className="w-full md:w-[50%] max-w-3xl bg-gray-800 shadow-2xl rounded-lg p-6 lg:p-8">
+        <h1 className="text-3xl md:text-4xl font-bold text-center text-white mb-6">
           Contact Us
         </h1>
         <p className="text-center text-gray-300 mb-8">
-          We re here to help! Please fill out the form below, and we ll get back
+          We’re here to help! Please fill out the form below, and we’ll get back
           to you as soon as possible.
         </p>
 
@@ -116,7 +119,7 @@ export default function ContactUsPage() {
           <div className="flex justify-center">
             <a
               href="mailto:dathariqf@gmail.com"
-              className="bg-blue-600 text-white hover:bg-blue-700 transition duration-300 ease-in-out px-8 py-3 rounded-lg"
+              className="bg-blue-600 text-white hover:bg-blue-700 transition duration-300 ease-in-out px-8 py-3 rounded-lg w-full md:w-auto text-center"
             >
               Send Message
             </a>

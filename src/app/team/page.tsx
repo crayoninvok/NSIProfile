@@ -12,6 +12,7 @@ interface IRandomUser {
   picture: { large: string };
 }
 
+
 export default function TeamPage() {
   const [teamMembers, setTeamMembers] = useState<ITeam[]>([]);
   const [selectedMember, setSelectedMember] = useState<ITeam | null>(null);

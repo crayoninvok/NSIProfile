@@ -26,10 +26,11 @@ const staggerContainer = {
   visible: { opacity: 1, transition: { staggerChildren: 0.3 } },
 };
 
+
 export default function About() {
   return (
     <motion.div
-      className="flex flex-col items-center bg-gradient-to-b from-gray-900 to-gray-700 min-h-screen py-10 px-4 md:px-10 lg:px-20 gap-5"
+      className="flex flex-col items-center bg-gradient-to-b from-gray-700 to-blue-600 min-h-screen py-10 px-4 md:px-10 lg:px-20 gap-5"
       initial="hidden"
       animate="visible"
       variants={staggerContainer}
@@ -40,11 +41,11 @@ export default function About() {
         variants={fadeInUp}
       >
         <div className="flex items-center justify-center w-full md:w-1/2 mb-4 md:mb-0">
-          <Image src="/about/LOGONSI.png" alt="NSI Logo" width={200} height={200} />
+          <Image src="/about/fotologo.jpg" alt="NSI Logo" width={200} height={200} />
         </div>
         <div className="text-center md:text-left w-full md:w-1/2 px-4">
-          <h1 className="text-5xl font-bold text-gray-100 mb-4 mt-3">About us</h1>
-          <p className="text-lg text-gray-400 max-w-3xl mx-auto">
+          <h1 className="text-5xl font-bold text-white mb-4 mt-3">About us</h1>
+          <p className="text-lg text-gray-200 max-w-3xl mx-auto">
             Founded in 2024, Nautika Sentra Indonesia was established with a vision to revolutionize
             the maritime industry through advanced technology and innovative solutions. Starting as
             a small team of maritime professionals and tech enthusiasts, the company recognized the
@@ -56,7 +57,7 @@ export default function About() {
 
       {/* Mission and Values Section */}
       <motion.section
-        className="flex flex-col md:flex-row items-center gap-10 bg-blue-300 shadow-lg rounded-lg p-8 my-10 w-full max-w-5xl"
+        className="flex flex-col md:flex-row items-center gap-5 bg-gradient-to-r from-gray-500 to-blue-200 shadow-lg rounded-lg p-8 my-10 w-full max-w-4xl"
         variants={fadeInLeft}
       >
         <div className="w-full md:w-1/2 ">
@@ -68,7 +69,7 @@ export default function About() {
             className="rounded-lg shadow-lg transform transition-all duration-700 hover:scale-105"
           />
         </div>
-        <div className="w-full md:w-1/2 text-gray-800">
+        <div className="w-full md:w-1/2 text-gray-900">
           <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
           <p className="text-lg mb-4">
             At Nautika Sentra Indonesia, our mission is to drive innovation in the maritime industry
@@ -76,7 +77,7 @@ export default function About() {
             for our clients around the globe.
           </p>
           <h3 className="text-2xl font-semibold mt-6 mb-2">Our Values</h3>
-          <ul className="list-disc pl-5 space-y-2 text-gray-700">
+          <ul className="list-disc pl-5 space-y-2 text-gray-900">
             <li>Integrity and Transparency</li>
             <li>Commitment to Quality</li>
             <li>Customer-Centric Approach</li>
@@ -87,10 +88,10 @@ export default function About() {
 
       {/* Team Overview Section */}
       <motion.section
-        className="items-center justify-center text-center w-full md:w-[40vw] bg-blue-300 py-5 rounded-3xl"
+        className="items-center justify-center text-center w-full md:w-[47vw] md:h-[70vh] bg-gradient-to-r from-gray-500 to-blue-200 py-5 rounded-3xl"
         variants={fadeInRight}
       >
-        <p className="text-slate-100 font-semibold text-[30px]">Our Team Quotes & Overview</p>
+        <p className="text-gray-900 font-semibold text-[30px]">Our Team Quotes & Overview</p>
         <Testimoni />
         <Link href={"/team"}>
           <p className="btn glass bg-gray-500">Load More</p>

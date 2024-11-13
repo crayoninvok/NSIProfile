@@ -68,27 +68,27 @@ export default function Navbar() {
 
       {/* Mobile Menu Icon */}
       <div className="md:hidden flex items-center mr-4">
-        <button onClick={() => setIsOpen(!isOpen)} className="text-gray-700">
+        <button onClick={() => setIsOpen(!isOpen)} className="text-white">
           {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute top-[5rem] left-0 w-full bg-slate-400 text-white flex flex-col items-center py-5 space-y-4 md:hidden">
-          <Link href="/" className="btn glass w-full text-center" onClick={() => setIsOpen(false)}>
+        <div className="absolute top-[5rem] left-0 w-full bg-transparent text-white flex flex-col items-center py-5 space-y-4 md:hidden">
+          <Link href="/" className="btn glass bg-blue-400 w-[50vw] text-center" onClick={() => setIsOpen(false)}>
             Home
           </Link>
-          <Link href="/about" className="btn glass w-full text-center" onClick={() => setIsOpen(false)}>
+          <Link href="/about" className="btn glass bg-blue-400 w-[50vw] text-center" onClick={() => setIsOpen(false)}>
             About Us
           </Link>
-          <Link href="/product" className="btn glass w-full text-center" onClick={() => setIsOpen(false)}>
+          <Link href="/product" className="btn glass bg-blue-400 w-[50vw] text-center" onClick={() => setIsOpen(false)}>
             Our Service and Products
           </Link>
-          <Link href="/team" className="btn glass w-full text-center" onClick={() => setIsOpen(false)}>
+          <Link href="/team" className="btn glass bg-blue-400 w-[50vw] text-center" onClick={() => setIsOpen(false)}>
             Our Team
           </Link>
-          <Link href="/contact" className="btn glass w-full text-center" onClick={() => setIsOpen(false)}>
+          <Link href="/contact" className="btn glass bg-blue-400 w-[50vw] text-center" onClick={() => setIsOpen(false)}>
             Contact Us
           </Link>
         </div>

@@ -13,7 +13,7 @@ export default function Testimoni() {
       quote:
         "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
       name: "Nurdin",
-      designation: "Surveyor at NSI",
+      designation: "Finance at NSI",
       src: "/overviewteam/nurdin01.jpg",
     },
     {

@@ -15,7 +15,7 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
       animation: {
-        'loop-scroll': 'loop-scroll 50s linear infinite', // Define the scroll animation
+        'loop-scroll': 'loop-scroll 50s linear infinite', 
       },
       keyframes: {
         'loop-scroll': {
