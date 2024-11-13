@@ -17,37 +17,37 @@ const customers: Customer[] = [
   {
     name: "Medco Energi",
     image: "/customerIMG/Medco.jpeg",
-    description: "Leading company in technology solutions.",
+    description: "Medco Energy is a leading Indonesian energy company with a strong focus on sustainable growth in oil, gas, and renewable energy.",
   },
   {
     name: "PT. Meratus Line",
     image: "/customerIMG/meratus1.jpg",
-    description: "Innovative provider of cloud-based solutions.",
+    description: "Shipping company that provides integrated logistics and transportation solutions across the archipelago..",
   },
   {
     name: "Pac Ship Management Pte.Ltd",
     image: "/customerIMG/PacSuhail.jpg",
-    description: "Trusted by millions worldwide for their reliability.",
+    description: "Reputable maritime company dedicated to providing comprehensive shipping services and solutions across the global maritime industry.",
   },
   {
     name: "PT. Pelni",
     image: "/customerIMG/pelni1.jpg",
-    description: "Pioneers in AI and machine learning.",
+    description: "State-owned enterprise that plays a vital role in Indonesia's maritime transportation network..",
   },
   {
     name: "Pertamina International Shipping",
     image: "/customerIMG/pis1.jpg",
-    description: "Pioneers in AI and machine learning.",
+    description: "Focusing on the transportation and shipping of energy products, primarily oil and gas, to domestic and international markets.",
   },
   {
     name: "Teras Offshore Pte.Ltd",
     image: "/customerIMG/teras1.jpg",
-    description: "Pioneers in AI and machine learning.",
+    description: "Specializes in marine logistics and support services for the offshore oil and gas industry.",
   },
   {
     name: "Vallianz Offshore Pte.Ltd",
     image: "/customerIMG/vallianz1.jpg",
-    description: "Pioneers in AI and machine learning.",
+    description: "The company's fleet includes various OSVs such as anchor handling tugs, platform supply vessels, and accommodation work barges.",
   },
 ];
 
