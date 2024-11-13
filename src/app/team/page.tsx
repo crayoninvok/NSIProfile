@@ -73,24 +73,25 @@ export default function TeamPage() {
         <div className="flex justify-center mb-8">
           <div
             key={director.fields.name}
-            className="bg-gray-800 hover:bg-gray-700 shadow-lg rounded-lg p-6 w-full max-w-4xl transform transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center"
+            className="bg-gray-800 hover:bg-gray-700 shadow-lg rounded-lg p-6 w-full max-w-4xl transform transition-all duration-300 hover:scale-105 hover:shadow-2xl flex flex-col md:flex-row items-center"
           >
             {/* Photo Section */}
-            <div className="overflow-hidden rounded-lg w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mr-6 flex-shrink-0">
+            <div className="overflow-hidden rounded-lg w-40 h-40 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mb-4 md:mb-0 mr-0 md:mr-6 flex-shrink-0">
               <img
                 src={`https:${director.fields.image.fields.file.url}`}
                 alt={director.fields.name}
                 className="object-cover w-full h-full"
+                loading="lazy"
               />
             </div>
 
             {/* Text and Button Section */}
-            <div className="flex flex-col text-center items-center text-white space-y-4 w-full">
+            <div className="flex flex-col text-center md:text-left items-center md:items-start text-white space-y-4 w-full">
               <h2 className="text-2xl md:text-3xl font-semibold">
                 {director.fields.name}
               </h2>
               <p className="text-gray-400">{director.fields.role}</p>
-              <p className="text-gray-300">Hello i am Sohee im founder of PT.NSI Marine </p>
+              <p className="text-gray-300">Hello, I am Sohee, founder of PT.NSI Marine.</p>
               <button
                 className="btn btn-primary btn-sm md:btn-md lg:btn-lg w-32 mt-2 hover:bg-blue-600"
                 onClick={() => window.open("https://instagram.com/xeesoxee", "_blank")}
@@ -119,9 +120,9 @@ export default function TeamPage() {
               src={`https:${member.fields.image.fields.file.url}`}
               alt={member.fields.name}
               className="object-cover w-full h-full"
+              loading="lazy"
             />
 
-            {/* Name and Role in Top Left */}
             <div className="absolute top-2 left-2 bg-slate-500 bg-opacity-80 rounded-lg px-2 py-1 text-center">
               <h2 className="text-sm sm:text-base font-semibold text-white">
                 {member.fields.name}
@@ -129,7 +130,6 @@ export default function TeamPage() {
               <p className="text-xs text-gray-300">{member.fields.role}</p>
             </div>
 
-            {/* Overlay with Connect Button, only visible on hover */}
             <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
               <button
                 className="btn glass btn-primary btn-sm hover:bg-blue-600"
@@ -160,6 +160,7 @@ export default function TeamPage() {
                 src={user.picture.large}
                 alt={`${user.name.first} ${user.name.last}`}
                 className="object-cover w-full h-full"
+                loading="lazy"
               />
             </div>
             <h2 className="text-lg sm:text-xl font-semibold text-white mb-1">
@@ -184,6 +185,7 @@ export default function TeamPage() {
               src={`https:${selectedMember.fields.image.fields.file.url}`}
               alt={selectedMember.fields.name}
               className="w-32 h-32 sm:w-48 sm:h-48 mx-auto rounded-lg mb-4 transition-transform duration-300 hover:scale-105"
+              loading="lazy"
             />
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
               {selectedMember.fields.name}
