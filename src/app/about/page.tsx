@@ -50,7 +50,7 @@ export default function About() {
             About Us
           </h1>
           <p className="text-base md:text-lg text-gray-200 max-w-lg md:max-w-3xl mx-auto md:mx-0 leading-relaxed">
-            Welcome to NSI, Indonesia's trusted vendor for premium navigation
+            Welcome to NSI, Indonesia trusted vendor for premium navigation
             and communication equipment since 2024. We are proud to represent
             renowned manufacturers like Furuno, JRC, and many others, bringing
             world-class marine technology to our clients. Our expertise goes

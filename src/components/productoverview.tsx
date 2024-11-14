@@ -29,13 +29,13 @@ export default function ProdukHome() {
     },
     {
       title: "Radio Inspection and APT VDR",
-      description: "Seamlessly integrated systems for efficient bridge operations and control.",
+      description: "Annual Radio and VDR System inspection on behalf ship classification.",
       images: [
         "/overviewsurveyvdr/rs.jpg",
         "/overviewsurveyvdr/VR3000.jpg",
         "/overviewsurveyvdr/VR7000.jpg"
       ],
-      link: "/products/bridge-systems"
+      link: "/contact"
     },
     {
       title: "Training & Support",
