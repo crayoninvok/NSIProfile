@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import Timeline from "@/components/timeline";
 import TeamOverview from "@/components/teamoverview2";
-import CustomerTestimoni from "@/components/react-slickTestimoni";
+
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },

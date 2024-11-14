@@ -7,13 +7,13 @@ import 'slick-carousel/slick/slick-theme.css';
 const testimonials = [
   {
     name: 'Airin',
-    feedback: 'Excellent service and support!',
+    feedback: 'Excellent service and support',
     position: 'Operational of Pertamina International Shipping',
     imageSrc: '/forTestimoni/airin.jpg',
   },
   {
     name: 'Yanuar',
-    feedback: 'Highly recommended! The team was amazing.',
+    feedback: 'Highly recommended The team was amazing.',
     position: 'Procurement of Samudera Indonesia',
     imageSrc: '/forTestimoni/prosamudera.jpg',
   },
@@ -54,7 +54,7 @@ export default function CustomerTestimoni() {
           <div className="flex flex-col text-center md:text-left justify-center md:ml-6">
             <h4 className="text-[35px] font-semibold text-gray-800">{testimonial.name}</h4>
             <p className="text-lg text-rose-800 ">{testimonial.position}</p>
-            <p className="text-gray-700 italic mt-2">"{testimonial.feedback}"</p>
+            <p className="text-gray-700 italic mt-2"> &quot;{testimonial.feedback}&quot;</p>
           </div>
         </div>
       </div>
