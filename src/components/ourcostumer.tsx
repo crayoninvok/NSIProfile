@@ -53,8 +53,8 @@ const customers: Customer[] = [
 
 export default function OurCustomers() {
   return (
-    <div className="w-full py-5 bg-transparent dark:bg-neutral-900">
-      <h2 className="text-3xl md:text-5xl font-bold text-center text-gray-300 dark:text-neutral-200 mb-10">
+    <div className="w-full py-5 bg-transparent">
+      <h2 className="text-3xl md:text-5xl font-bold text-center text-slate-100 dark:text-neutral-200 mb-10">
         Our Customers
       </h2>
       <div className="flex gap-4 overflow-x-auto px-4">
@@ -66,7 +66,7 @@ export default function OurCustomers() {
             transition={{ duration: 0.5, delay: index * 0.2 }}
             className="relative flex-shrink-0 w-60 md:w-80 h-80 p-4 rounded-lg shadow-lg overflow-hidden"
           >
-            {/* Background image */}
+     
             <Image
               src={customer.image}
               alt={customer.name}

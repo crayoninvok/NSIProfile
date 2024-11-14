@@ -1,6 +1,6 @@
 import { AnimatedTestimonials } from "@/components/ui/animated-team";
 
-export default function Testimoni() {
+export default function TeamOverview() {
   const testimonials = [
     {
       quote:

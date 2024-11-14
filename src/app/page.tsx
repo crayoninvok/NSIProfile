@@ -10,6 +10,8 @@ import { Cover } from "@/components/ui/cover";
 import { HiArrowCircleDown } from "react-icons/hi";
 import OurCustomers from "@/components/ourcostumer";
 import "aos/dist/aos.css";
+import CustomerTestimoni from "@/components/react-slickTestimoni";
+
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -176,6 +178,11 @@ export default function Home() {
       <div className="bg-transparent py-5 flex items-center justify-center hero w-full">
         <OurCustomers />
       </div>
+      <div
+        className="w-full py-10 bg-transparent text-white text-center">
+      <CustomerTestimoni />
+      </div>
+      
     </div>
   );
 }

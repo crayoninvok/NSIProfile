@@ -1,8 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Testimoni from "@/components/teamoverview2";
+
 import Timeline from "@/components/timeline";
+import TeamOverview from "@/components/teamoverview2";
+import CustomerTestimoni from "@/components/react-slickTestimoni";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -108,10 +110,10 @@ export default function About() {
         variants={fadeInRight}
       >
         <p className="text-gray-900 font-semibold text-[30px]">
-          Our <span className="text-red-500"> TeamQuotes</span> &{" "}
+          Our <span className="text-red-500">Team Quotes</span> &{" "}
           <span className="text-red-500">Overview</span>
         </p>
-        <Testimoni />
+        <TeamOverview />
       </motion.section>
 
       <motion.section
@@ -216,7 +218,7 @@ export default function About() {
           </div>
         </section>
       </motion.section>
-
+     
       <motion.section
         className="w-full py-10 bg-gradient-to-b from-transparent to-gray-500 shadow-lg text-white text-center"
         variants={fadeInUp}
