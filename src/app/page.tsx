@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Dialog } from "@headlessui/react";
 import { useState } from "react";
 import { FaMapMarkedAlt, FaUser, FaWrench } from "react-icons/fa";
 import { PiStudentFill } from "react-icons/pi";
@@ -10,8 +9,6 @@ import ProdukHome from "@/components/productoverview";
 import { Cover } from "@/components/ui/cover";
 import { HiArrowCircleDown } from "react-icons/hi";
 import OurCustomers from "@/components/ourcostumer";
-import AOS from "aos";
-import { useEffect } from "react";
 import "aos/dist/aos.css";
 
 export default function Home() {
