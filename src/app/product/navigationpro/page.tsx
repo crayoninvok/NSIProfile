@@ -13,9 +13,9 @@ export default async function ProductListNav() {
   const products: IProNav[] = await getProductNav();
 
   return (
-    <div className="mx-auto py-10 bg-gradient-to-b from-gray-900 to-gray-700 w-full px-[3rem]">
+    <div className="mx-auto py-10 bg-radial-gradient from-darkBlue to-darkNavy w-full px-[3rem]">
       <div className="flex flex-col justify-center">
-        <h1 className="text-4xl font-bold text-center text-violet-500 mt-[10vh]">
+        <h1 className="text-4xl font-bold text-center text-slate-100 mt-[10vh]">
           Navigation Products
         </h1>
         

@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Testimoni from "@/components/teamoverview2";
 import Timeline from "@/components/timeline";
-import { GlobeDemo } from "@/components/globeGitTamplate";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -33,7 +32,6 @@ export default function About() {
       animate="visible"
       variants={staggerContainer}
     >
- 
       <motion.div
         className="flex flex-col md:flex-row items-center justify-center h-auto py-10 px-4 md:px-10 mt-16 md:mt-8 mb-12 md:mb-0"
         variants={fadeInUp}
@@ -48,75 +46,81 @@ export default function About() {
           />
         </div>
         <div className="text-center md:text-left md:w-1/2">
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 mt-3">About Us</h1>
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 mt-3">
+            About Us
+          </h1>
           <p className="text-base md:text-lg text-gray-200 max-w-lg md:max-w-3xl mx-auto md:mx-0 leading-relaxed">
-            Welcome to NSI, Indonesia's trusted vendor for premium navigation and communication equipment since 2024. We are proud to represent renowned manufacturers like Furuno, JRC, and many others, bringing world-class marine technology to our clients. Our expertise goes beyond sales; we provide comprehensive support services, including certified radio surveys and APT VDR, ensuring that your vessels meet all safety and regulatory standards. With a commitment to reliability, quality, and customer satisfaction, NSI is here to keep your operations seamless and safe at sea.
+            Welcome to NSI, Indonesia's trusted vendor for premium navigation
+            and communication equipment since 2024. We are proud to represent
+            renowned manufacturers like Furuno, JRC, and many others, bringing
+            world-class marine technology to our clients. Our expertise goes
+            beyond sales; we provide comprehensive support services, including
+            certified radio surveys and APT VDR, ensuring that your vessels meet
+            all safety and regulatory standards. With a commitment to
+            reliability, quality, and customer satisfaction, NSI is here to keep
+            your operations seamless and safe at sea.
           </p>
         </div>
       </motion.div>
 
-  
-      <div className="flex flex-col md:flex-row items-center w-full p-4 gap-10">
-        <div className="w-full md:w-1/2 max-w-6xl justify-center mb-8">
+      <div className="flex flex-col items-center w-full p-4">
+        <div className="w-full max-w-6xl mb-8">
           <Timeline />
         </div>
-        <div className="w-full md:w-1/2 max-w-6xl">
-          <GlobeDemo />
-        </div>
+        <motion.section
+          className="flex flex-col md:flex-row items-center gap-5 p-6 md:p-8 my-10 max-w-6xl w-full"
+          variants={fadeInLeft}
+        >
+          <div className="w-full md:w-1/2 mb-6 md:mb-0">
+            <Image
+              src="/about/about3.jpg"
+              alt="Our Mission"
+              width={500}
+              height={200}
+              className="rounded-lg shadow-lg transform transition-all duration-700 hover:scale-105"
+            />
+          </div>
+          <div className="w-full md:w-1/2 text-center md:text-left text-slate-100">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Our <span className="text-red-500">Mission</span>
+            </h2>
+            <p className="text-base md:text-lg mb-4">
+              At Nautika Sentra Indonesia, our mission is to drive innovation in
+              the maritime industry by providing state-of-the-art solutions that
+              ensure safety, efficiency, and connectivity for our clients around
+              the globe.
+            </p>
+            <h3 className="text-3xl md:text-4xl font-semibold mt-6 mb-2">
+              Our <span className="text-red-500">Values</span>
+            </h3>
+            <ul className="list-disc pl-5 space-y-2 text-slate-100">
+              <li>Integrity and Transparency</li>
+              <li>Commitment to Quality</li>
+              <li>Customer-Centric Approach</li>
+              <li>Continuous Innovation</li>
+            </ul>
+          </div>
+        </motion.section>
       </div>
 
-   
-      <motion.section
-        className="flex flex-col md:flex-row items-center gap-5 shadow-lg p-6 md:p-8 my-10 max-w-6xl w-full"
-        variants={fadeInLeft}
-      >
-        <div className="w-full md:w-1/2 mb-6 md:mb-0">
-          <Image
-            src="/about/about3.jpg"
-            alt="Our Mission"
-            width={500}
-            height={200}
-            className="rounded-lg shadow-lg transform transition-all duration-700 hover:scale-105"
-          />
-        </div>
-        <div className="w-full md:w-1/2 text-center md:text-left text-slate-100">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Our <span className="text-red-500">Mission</span>
-          </h2>
-          <p className="text-base md:text-lg mb-4">
-            At Nautika Sentra Indonesia, our mission is to drive innovation in the maritime industry by providing state-of-the-art solutions that ensure safety, efficiency, and connectivity for our clients around the globe.
-          </p>
-          <h3 className="text-3xl md:text-4xl font-semibold mt-6 mb-2">
-            Our <span className="text-red-500">Values</span>
-          </h3>
-          <ul className="list-disc pl-5 space-y-2 text-slate-100">
-            <li>Integrity and Transparency</li>
-            <li>Commitment to Quality</li>
-            <li>Customer-Centric Approach</li>
-            <li>Continuous Innovation</li>
-          </ul>
-        </div>
-      </motion.section>
-
-   
       <motion.section
         className="items-center justify-center text-center w-full md:w-[47vw] md:h-[60vh] h-relative bg-gradient-to-r from-gray-300 to-gray-400 py-5 rounded-3xl"
         variants={fadeInRight}
       >
-        <p className="text-white font-semibold text-[30px]">
-          Our <span className="text-red-500">Team Quotes</span> & <span className="text-red-500">Overview</span>
+        <p className="text-gray-900 font-semibold text-[30px]">
+          Our <span className="text-red-500"> TeamQuotes</span> &{" "}
+          <span className="text-red-500">Overview</span>
         </p>
         <Testimoni />
       </motion.section>
 
-   
       <motion.section
         className="text-center py-10 w-full max-w-5xl"
         variants={fadeInUp}
       >
         <section className="text-center py-10 w-full max-w-5xl">
           <h2 className="text-4xl font-bold text-white mb-6">
-            Our Approved <span className="text-red-500">Classification</span> 
+            Our Approved <span className="text-red-500">Classification</span>
           </h2>
           <p className="text-lg text-white max-w-2xl mx-auto mb-10">
             At NSI, we collaborate with industry-leading classification
@@ -138,9 +142,7 @@ export default function About() {
               <h3 className="text-xl font-semibold">
                 Bureau Veritas <i>(BV)</i>
               </h3>
-              <p className="text-gray-500 text-center">
-                French IACs Class.
-              </p>
+              <p className="text-gray-500 text-center">French IACs Class.</p>
             </div>
             <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center text-center">
               <Image
@@ -153,9 +155,7 @@ export default function About() {
               <h3 className="text-xl font-semibold">
                 Nippon Kaiji Kyokai <i>(NK)</i>
               </h3>
-              <p className="text-gray-500 text-center">
-                Japan IACs Class
-              </p>
+              <p className="text-gray-500 text-center">Japan IACs Class</p>
             </div>
             <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center text-center">
               <Image
@@ -168,9 +168,7 @@ export default function About() {
               <h3 className="text-xl font-semibold">
                 Det Norske Veritas <i>(DNV)</i>
               </h3>
-              <p className="text-gray-500 text-center">
-                Norway IACs Class
-              </p>
+              <p className="text-gray-500 text-center">Norway IACs Class</p>
             </div>
             <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center text-center">
               <Image
@@ -183,9 +181,7 @@ export default function About() {
               <h3 className="text-xl font-semibold">
                 Lloyds Register <i>(LR)</i>
               </h3>
-              <p className="text-gray-500 text-center">
-                British IACs Class
-              </p>
+              <p className="text-gray-500 text-center">British IACs Class</p>
             </div>
             <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center text-center">
               <Image
@@ -222,7 +218,7 @@ export default function About() {
       </motion.section>
 
       <motion.section
-        className="w-full py-10 bg-gray-400 text-white text-center"
+        className="w-full py-10 bg-gradient-to-b from-transparent to-gray-500 shadow-lg text-white text-center"
         variants={fadeInUp}
       >
         <h2 className="text-3xl font-bold mb-4">Manufacture Partner</h2>

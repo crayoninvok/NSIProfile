@@ -12,9 +12,9 @@ export default async function ProductListPage() {
   }
 
   return (
-    <div className="mx-auto py-10 bg-gradient-to-b from-gray-900 to-gray-700 w-full">
+    <div className="mx-auto py-10 bg-radial-gradient from-darkBlue to-darkNavy w-full">
       <div className="flex flex-col justify-center">
-        <h1 className="text-4xl font-bold mb-12 text-center text-violet-500 mt-[5vh]">
+        <h1 className="text-4xl font-bold mb-12 text-center text-slate-100 mt-[5vh]">
           Product List
         </h1>
         <Link href="/product/" passHref>

@@ -90,7 +90,7 @@ export default function ProdukHome() {
             </div>
             <h3 className="text-2xl font-semibold text-gray-800">{product.title}</h3>
             <p className="text-gray-600 mt-2">{product.description}</p>
-            <Link href={product.link} className="text-teal-500 font-semibold hover:underline">
+            <Link href={product.link} className=" btn bg-red-500 text-white font-semibold hover:pointer hover:text-black">
               Learn More
             </Link>
           </div>

@@ -14,15 +14,7 @@ import AOS from "aos";
 import { useEffect } from "react";
 import "aos/dist/aos.css";
 
-
 export default function Home() {
-  useEffect(() => {
-    AOS.init({
-      duration: 800, // Duration of animations in milliseconds
-      easing: "ease-in-out", // Easing function for animations
-      once: true, // Animation will only happen once
-    });
-  }, []);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
@@ -69,8 +61,8 @@ export default function Home() {
             <Cover>Nautika Sentra Indonesia</Cover>
           </h1>
           <p className="text-sm sm:text-lg md:text-xl lg:text-2xl font-extrabold text-center text-white px-4">
-            Helping you stay ahead by combining innovative maritime navigation
-            & radiocommunication tech and hands-on support.
+            Helping you stay ahead by combining innovative maritime navigation &
+            radiocommunication tech and hands-on support.
           </p>
         </div>
 
@@ -108,43 +100,44 @@ export default function Home() {
             </button>
           </div>
         </div>
+        {isModalOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+            <div className="bg-white rounded-lg max-w-md w-full p-6">
+              <h2 className="text-xl font-bold mb-4 text-center">
+                Our Services
+              </h2>
+              <p className="text-sm text-gray-700 mb-4 text-center">
+                Explore various solutions, training options, and customer
+                support locations.
+              </p>
 
-        <Dialog
-          open={isModalOpen}
-          onClose={closeModal}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
-        >
-          <Dialog.Panel className="bg-white rounded-lg max-w-md w-full p-6">
-            <Dialog.Title className="text-xl font-bold mb-4 text-center">
-              Our Services
-            </Dialog.Title>
-            <Dialog.Description className="text-sm text-gray-700 mb-4 text-center">
-              Explore various solutions, training options, and customer support locations.
-            </Dialog.Description>
-            <div className="grid grid-cols-1 gap-4">
-              {cards.map(({ title, icon: Icon, text }, idx) => (
-                <div
-                  key={idx}
-                  className="flex flex-col items-center bg-gray-100 shadow-md rounded-lg p-4"
-                >
-                  <h2 className="font-bold text-lg flex gap-2 items-center text-teal-500">
-                    <Icon className="text-teal-500" aria-hidden="true" /> {title}
-                  </h2>
-                  <p className="text-gray-700 text-sm text-center mt-2">
-                    {text}
-                  </p>
-                </div>
-              ))}
+              <div className="grid grid-cols-1 gap-4">
+                {cards.map(({ title, icon: Icon, text }, idx) => (
+                  <div
+                    key={idx}
+                    className="flex flex-col items-center bg-gray-100 shadow-md rounded-lg p-4"
+                  >
+                    <h3 className="font-bold text-lg flex gap-2 items-center text-teal-500">
+                      <Icon className="text-teal-500" aria-hidden="true" />{" "}
+                      {title}
+                    </h3>
+                    <p className="text-gray-700 text-sm text-center mt-2">
+                      {text}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <button
+                onClick={closeModal}
+                className="mt-4 bg-red-500 text-white py-1 px-4 rounded w-full"
+                aria-label="Close Services Modal"
+              >
+                Close
+              </button>
             </div>
-            <button
-              onClick={closeModal}
-              className="mt-4 bg-red-500 text-white py-1 px-4 rounded w-full"
-              aria-label="Close Services Modal"
-            >
-              Close
-            </button>
-          </Dialog.Panel>
-        </Dialog>
+          </div>
+        )}
       </div>
 
       <div className="flex flex-col md:flex-row items-center justify-center p-6 mt-6 space-y-8 md:space-y-0 md:space-x-8 ">
@@ -166,7 +159,7 @@ export default function Home() {
           <p className="text-gray-600 lg:text-[30px] mb-6">
             A renowned supplier of integrated bridge solutions, representing top
             brands in the industry and producing unique complementary products.
-            We assist your company with innovative solutions that match today’s
+            We assist your company with innovative solutions that match todays
             technology, ensuring you stay at the forefront of maritime
             advancements.
           </p>
