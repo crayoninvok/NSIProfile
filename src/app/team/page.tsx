@@ -72,7 +72,7 @@ export default function TeamPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-700 p-4 sm:p-6 md:p-8 text-white">
+    <div className="min-h-screen bg-radial-gradient from-darkBlue to-darkNavy p-4 sm:p-6 md:p-8 text-white">
       <div className="max-w-6xl mx-auto text-center mb-8 mt-20 sm:mt-24">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">
           Meet Our Team

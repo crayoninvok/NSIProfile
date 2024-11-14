@@ -1,3 +1,4 @@
+
 import daisyui from "daisyui";
 import type { Config } from "tailwindcss";
 
@@ -13,6 +14,11 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        darkBlue: '#0a3a66',
+        darkNavy: '#0d1c2e',
+      },
+      backgroundImage: {
+        'radial-gradient': 'radial-gradient(circle at center, var(--tw-gradient-stops))',
       },
       animation: {
         'loop-scroll': 'loop-scroll 50s linear infinite', 

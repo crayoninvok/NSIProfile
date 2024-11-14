@@ -52,7 +52,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-900">
+    <div className="flex flex-col min-h-screen bg-radial-gradient from-darkBlue to-darkNavy">
       <div className="relative w-full h-[80vh] sm:h-[85vh] md:h-[90vh] lg:h-[97vh]">
         <video
           src="/home/intro01.mp4"
@@ -147,7 +147,7 @@ export default function Home() {
         </Dialog>
       </div>
 
-      <div className="flex flex-col md:flex-row items-center justify-center bg-gradient-to-b from-gray-900 to-blue-900 p-6 mt-6 space-y-8 md:space-y-0 md:space-x-8">
+      <div className="flex flex-col md:flex-row items-center justify-center p-6 mt-6 space-y-8 md:space-y-0 md:space-x-8 ">
         <div className="relative w-full md:w-1/2 lg:w-1/3 h-64 sm:h-80">
           <Image
             src="/home/fsg.jpg"
@@ -179,11 +179,11 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="h-auto bg-gradient-to-b from-blue-900 to-blue-800 py-10">
+      <div className="h-auto bg-transparent py-10">
         <ProdukHome />
       </div>
 
-      <div className="bg-gradient-to-b from-blue-800 to-blue-600 py-5 flex items-center justify-center hero w-full">
+      <div className="bg-transparent py-5 flex items-center justify-center hero w-full">
         <OurCustomers />
       </div>
     </div>

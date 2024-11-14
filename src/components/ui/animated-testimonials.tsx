@@ -3,6 +3,7 @@
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 type Testimonial = {
@@ -94,7 +95,7 @@ export const AnimatedTestimonials = ({
             </AnimatePresence>
           </div>
         </div>
-        <div className="flex justify-between flex-col py-4">
+        <div className="flex justify-between flex-col py-4 w-full">
           <motion.div
             key={active}
             initial={{
@@ -114,13 +115,13 @@ export const AnimatedTestimonials = ({
               ease: "easeInOut",
             }}
           >
-            <h3 className="text-xl sm:text-2xl font-bold dark:text-white text-black">
+            <h3 className="text-3xl md:text-4xl font-bold dark:text-white text-black underline">
               {testimonials[active].name}
             </h3>
-            <p className="text-sm text-gray-500 dark:text-neutral-500">
+            <p className="text-sm text-gray-950">
               {testimonials[active].designation}
             </p>
-            <motion.p className="text-sm sm:text-lg text-gray-500 mt-4 sm:mt-8 dark:text-neutral-300">
+            <motion.p className="text-sm sm:text-lg text-black mt-4 sm:mt-8 dark:text-neutral-300">
               {testimonials[active].quote.split(" ").map((word, index) => (
                 <motion.span
                   key={index}
@@ -135,7 +136,7 @@ export const AnimatedTestimonials = ({
                     y: 0,
                   }}
                   transition={{
-                    duration: 0.2,
+                    duration: 0.5,
                     ease: "easeInOut",
                     delay: 0.02 * index,
                   }}
@@ -150,16 +151,21 @@ export const AnimatedTestimonials = ({
             <button
               onClick={handlePrev}
               className="h-8 w-8 sm:h-9 sm:w-9 rounded-full bg-gray-100 dark:bg-neutral-800 flex items-center justify-center group/button"
-            >.
+            >
               <IconArrowLeft className="h-5 w-5 text-black dark:text-neutral-400 group-hover/button:rotate-12 transition-transform duration-300" />
             </button>
             <button
               onClick={handleNext}
               className="h-8 w-8 sm:h-9 sm:w-9 rounded-full bg-gray-100 dark:bg-neutral-800 flex items-center justify-center group/button"
             >
-              <IconArrowRight className="h-5 w-5 text-black dark:text-neutral-400 group-hover/button:-rotate-12 transition-transform duration-300" />.
+              <IconArrowRight className="h-5 w-5 text-black dark:text-neutral-400 group-hover/button:-rotate-12 transition-transform duration-300" />
             </button>
           </div>
+            <div>
+            <Link href={"/team"}>
+              <p className="btn glass bg-gray-500 ">Load More</p>
+            </Link>
+            </div>
         </div>
       </div>
     </div>

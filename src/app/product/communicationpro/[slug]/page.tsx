@@ -62,7 +62,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   return (
     <div className="min-h-screen flex flex-col items-start justify-center py-10 bg-gray-200">
       <Link href="/product/communicationpro" passHref>
-        <button className="btn text-gray-800 hover:text-gray-600 mb-4 inline-flex items-center mt-[5rem] lg:ml-[16rem] font-semibold">
+        <button className="btn text-gray-800 hover:text-gray-600 mb-4 inline-flex items-center mt-[5rem] ml-[50px] md:ml-[190px] font-semibold">
           ← Back
         </button>
       </Link>

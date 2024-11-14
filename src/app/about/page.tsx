@@ -1,10 +1,9 @@
 "use client";
-
-
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import Testimoni from "@/components/teamoverview2";
+import Timeline from "@/components/timeline";
+import { GlobeDemo } from "@/components/globeGitTamplate";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -26,41 +25,52 @@ const staggerContainer = {
   visible: { opacity: 1, transition: { staggerChildren: 0.3 } },
 };
 
-
 export default function About() {
   return (
     <motion.div
-      className="flex flex-col items-center bg-gradient-to-b from-gray-700 to-blue-600 min-h-screen py-10 px-4 md:px-10 lg:px-20 gap-5"
+      className="flex flex-col items-center bg-radial-gradient from-darkBlue to-darkNavy min-h-screen py-10 px-4 md:px-10 lg:px-20 gap-5"
       initial="hidden"
       animate="visible"
       variants={staggerContainer}
     >
  
       <motion.div
-        className="flex flex-col md:flex-row items-center justify-center h-[40vh] py-10 mt-[13rem] mb-[7rem] md:mb-[0rem] md:mt-[3rem]"
+        className="flex flex-col md:flex-row items-center justify-center h-auto py-10 px-4 md:px-10 mt-16 md:mt-8 mb-12 md:mb-0"
         variants={fadeInUp}
       >
-        <div className="flex items-center justify-center w-full md:w-1/2 mb-4 md:mb-0">
-          <Image src="/about/fotologo.jpg" alt="NSI Logo" width={200} height={200} />
+        <div className="flex items-center justify-center w-full md:w-1/2 mb-6 md:mb-0">
+          <Image
+            src="/about/fotologo.jpg"
+            alt="NSI Logo"
+            width={200}
+            height={200}
+            className="max-w-[150px] md:max-w-[200px] rounded-lg"
+          />
         </div>
-        <div className="lcp-paragraph">
-          <h1 className="text-5xl font-bold text-white mb-4 mt-3">About us</h1>
-          <p className="text-lg text-gray-200 max-w-3xl mx-auto">
-            Founded in 2024, Nautika Sentra Indonesia was established with a vision to revolutionize
-            the maritime industry through advanced technology and innovative solutions. Starting as
-            a small team of maritime professionals and tech enthusiasts, the company recognized the
-            growing need for enhanced navigation, communication, and operational efficiency in the
-            maritime sector.
+        <div className="text-center md:text-left md:w-1/2">
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 mt-3">About Us</h1>
+          <p className="text-base md:text-lg text-gray-200 max-w-lg md:max-w-3xl mx-auto md:mx-0 leading-relaxed">
+            Welcome to NSI, Indonesia's trusted vendor for premium navigation and communication equipment since 2024. We are proud to represent renowned manufacturers like Furuno, JRC, and many others, bringing world-class marine technology to our clients. Our expertise goes beyond sales; we provide comprehensive support services, including certified radio surveys and APT VDR, ensuring that your vessels meet all safety and regulatory standards. With a commitment to reliability, quality, and customer satisfaction, NSI is here to keep your operations seamless and safe at sea.
           </p>
         </div>
       </motion.div>
 
- 
+  
+      <div className="flex flex-col md:flex-row items-center w-full p-4 gap-10">
+        <div className="w-full md:w-1/2 max-w-6xl justify-center mb-8">
+          <Timeline />
+        </div>
+        <div className="w-full md:w-1/2 max-w-6xl">
+          <GlobeDemo />
+        </div>
+      </div>
+
+   
       <motion.section
-        className="flex flex-col md:flex-row items-center gap-5 bg-gradient-to-r from-gray-500 to-blue-200 shadow-lg rounded-lg p-8 my-10 w-full max-w-4xl"
+        className="flex flex-col md:flex-row items-center gap-5 shadow-lg p-6 md:p-8 my-10 max-w-6xl w-full"
         variants={fadeInLeft}
       >
-        <div className="w-full md:w-1/2 ">
+        <div className="w-full md:w-1/2 mb-6 md:mb-0">
           <Image
             src="/about/about3.jpg"
             alt="Our Mission"
@@ -69,15 +79,17 @@ export default function About() {
             className="rounded-lg shadow-lg transform transition-all duration-700 hover:scale-105"
           />
         </div>
-        <div className="w-full md:w-1/2 text-gray-900">
-          <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
-          <p className="text-lg mb-4">
-            At Nautika Sentra Indonesia, our mission is to drive innovation in the maritime industry
-            by providing state-of-the-art solutions that ensure safety, efficiency, and connectivity
-            for our clients around the globe.
+        <div className="w-full md:w-1/2 text-center md:text-left text-slate-100">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Our <span className="text-red-500">Mission</span>
+          </h2>
+          <p className="text-base md:text-lg mb-4">
+            At Nautika Sentra Indonesia, our mission is to drive innovation in the maritime industry by providing state-of-the-art solutions that ensure safety, efficiency, and connectivity for our clients around the globe.
           </p>
-          <h3 className="text-2xl font-semibold mt-6 mb-2">Our Values</h3>
-          <ul className="list-disc pl-5 space-y-2 text-gray-900">
+          <h3 className="text-3xl md:text-4xl font-semibold mt-6 mb-2">
+            Our <span className="text-red-500">Values</span>
+          </h3>
+          <ul className="list-disc pl-5 space-y-2 text-slate-100">
             <li>Integrity and Transparency</li>
             <li>Commitment to Quality</li>
             <li>Customer-Centric Approach</li>
@@ -86,65 +98,129 @@ export default function About() {
         </div>
       </motion.section>
 
-    
+   
       <motion.section
-        className="items-center justify-center text-center w-full md:w-[47vw] md:h-[70vh] bg-gradient-to-r from-gray-500 to-blue-200 py-5 rounded-3xl"
+        className="items-center justify-center text-center w-full md:w-[47vw] md:h-[60vh] h-relative bg-gradient-to-r from-gray-300 to-gray-400 py-5 rounded-3xl"
         variants={fadeInRight}
       >
-        <p className="text-gray-900 font-semibold text-[30px]">Our Team Quotes & Overview</p>
+        <p className="text-white font-semibold text-[30px]">
+          Our <span className="text-red-500">Team Quotes</span> & <span className="text-red-500">Overview</span>
+        </p>
         <Testimoni />
-        <Link href={"/team"}>
-          <p className="btn glass bg-gray-500">Load More</p>
-        </Link>
       </motion.section>
 
-    
+   
       <motion.section
         className="text-center py-10 w-full max-w-5xl"
         variants={fadeInUp}
       >
-        
         <section className="text-center py-10 w-full max-w-5xl">
-        <h2 className="text-4xl font-bold text-gray-100 mb-6">Our Approved Classification</h2>
-        <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-10">
-          We work closely with industry leaders and meet the highest standards of classification. Our certifications and approvals reflect our commitment to excellence in maritime solutions.
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center text-center">
-            <Image src="/classIAX/BV.svg" alt="Classification" width={120} height={120} className="mx-auto mb-4" />
-            <h3 className="text-xl font-semibold">Bureau Veritas <i>(BV)</i></h3>
-            <p className="text-gray-500 text-center">Top standards in maritime safety and efficiency.</p>
+          <h2 className="text-4xl font-bold text-white mb-6">
+            Our Approved <span className="text-red-500">Classification</span> 
+          </h2>
+          <p className="text-lg text-white max-w-2xl mx-auto mb-10">
+            At NSI, we collaborate with industry-leading classification
+            societies and uphold the highest standards in maritime safety and
+            compliance. Our certifications and approvals underscore our
+            dedication to delivering reliable from the member of the IACs
+            Classification and local Classification, top-quality maritime
+            solutions.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center text-center">
+              <Image
+                src="/classIAX/BV.svg"
+                alt="Classification"
+                width={120}
+                height={120}
+                className="mx-auto mb-4"
+              />
+              <h3 className="text-xl font-semibold">
+                Bureau Veritas <i>(BV)</i>
+              </h3>
+              <p className="text-gray-500 text-center">
+                French IACs Class.
+              </p>
+            </div>
+            <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center text-center">
+              <Image
+                src="/classIAX/NK.svg"
+                alt="Classification"
+                width={120}
+                height={120}
+                className="mx-auto mb-4"
+              />
+              <h3 className="text-xl font-semibold">
+                Nippon Kaiji Kyokai <i>(NK)</i>
+              </h3>
+              <p className="text-gray-500 text-center">
+                Japan IACs Class
+              </p>
+            </div>
+            <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center text-center">
+              <Image
+                src="/classIAX/DNV.svg"
+                alt="Classification"
+                width={150}
+                height={120}
+                className="mx-auto mb-4"
+              />
+              <h3 className="text-xl font-semibold">
+                Det Norske Veritas <i>(DNV)</i>
+              </h3>
+              <p className="text-gray-500 text-center">
+                Norway IACs Class
+              </p>
+            </div>
+            <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center text-center">
+              <Image
+                src="/classIAX/LR.png"
+                alt="Classification"
+                width={120}
+                height={120}
+                className="mx-auto mb-4"
+              />
+              <h3 className="text-xl font-semibold">
+                Lloyds Register <i>(LR)</i>
+              </h3>
+              <p className="text-gray-500 text-center">
+                British IACs Class
+              </p>
+            </div>
+            <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center text-center">
+              <Image
+                src="/classIAX/BKI.svg"
+                alt="Classification"
+                width={120}
+                height={120}
+                className="mx-auto mb-4"
+              />
+              <h3 className="text-xl font-semibold">
+                Biro Klassifikasi Indonesia <i>(BKI)</i>
+              </h3>
+              <p className="text-gray-500 text-center">
+                Indonesia local classification society
+              </p>
+            </div>
+            <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center text-center">
+              <Image
+                src="/classIAX/ABS.png"
+                alt="Classification"
+                width={160}
+                height={120}
+                className="mx-auto mb-4"
+              />
+              <h3 className="text-xl font-semibold">
+                American Bureau of Shipping <i>(ABS)</i>
+              </h3>
+              <p className="text-gray-500 text-center">
+                United States IACs Class
+              </p>
+            </div>
           </div>
-          <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center text-center">
-            <Image src="/classIAX/NK.svg" alt="Classification" width={120} height={120} className="mx-auto mb-4" />
-            <h3 className="text-xl font-semibold">Nippon Kaiji Kyokai <i>(NK)</i></h3>
-            <p className="text-gray-500 text-center">Certified excellence in maritime operations.</p>
-          </div>
-          <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center text-center">
-            <Image src="/classIAX/DNV.svg" alt="Classification" width={150} height={120} className="mx-auto mb-4" />
-            <h3 className="text-xl font-semibold">Det Norske Veritas <i>(DNV)</i></h3>
-            <p className="text-gray-500 text-center">Advanced standards in maritime service.</p>
-          </div>
-          <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center text-center">
-            <Image src="/classIAX/LR.png" alt="Classification" width={120} height={120} className="mx-auto mb-4" />
-            <h3 className="text-xl font-semibold">Lloyds Register <i>(LR)</i></h3>
-            <p className="text-gray-500 text-center">Advanced standards in maritime service.</p>
-          </div>
-          <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center text-center">
-            <Image src="/classIAX/BKI.svg" alt="Classification" width={120} height={120} className="mx-auto mb-4" />
-            <h3 className="text-xl font-semibold">Biro Klassifikasi Indonesia <i>(BKI)</i></h3>
-            <p className="text-gray-500 text-center">Advanced standards in maritime service.</p>
-          </div>
-          <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-center text-center">
-            <Image src="/classIAX/ABS.png" alt="Classification" width={160} height={120} className="mx-auto mb-4" />
-            <h3 className="text-xl font-semibold">American Bureau of Shipping <i>(ABS)</i></h3>
-            <p className="text-gray-500 text-center">Advanced standards in maritime service.</p>
-          </div>
-        </div>
         </section>
       </motion.section>
 
-  
       <motion.section
         className="w-full py-10 bg-gray-400 text-white text-center"
         variants={fadeInUp}
@@ -154,8 +230,8 @@ export default function About() {
           We are proud to partner with leading manufacturers, bringing you the
           most reliable and innovative maritime solutions.
         </p>
-        
-          <div className="overflow-hidden w-full mt-8">
+
+        <div className="overflow-hidden w-full mt-8">
           <div className="flex w-full space-x-8 animate-loop-scroll">
             <Image
               src="/manufacturloop/furuno.png"
